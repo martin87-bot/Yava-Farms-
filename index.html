@@ -65,7 +65,50 @@
       font-weight: bold;
       margin-left: 15px;
     }
+/* Mobile Menu */
+#menu-toggle {
+  display: none;
+}
 
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Desktop */
+.nav-links a {
+  margin-left: 15px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    color: #1b5e20;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
+}
     header {
       background: #1b5e20;
       color: #fff;
