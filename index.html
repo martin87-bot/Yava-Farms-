@@ -1,78 +1,151 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yava Farms & Agricultural Consultancy</title>
+
   <style>
-    <section>
-  <h2>Visit Us</h2>
-  <p>
-    Our operations are based in Wenchi, Bono Region, Ghana. 
-    Visitors, partners, and collaborators are welcome by appointment.
-  </p>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
 
-  <iframe
-    src="https://www.google.com/maps?q=Wenchi,Bono%20Region,Ghana&output=embed"
-    width="100%"
-    height="350"
-    style="border:0; border-radius:10px;"
-    allowfullscreen=""
-    loading="lazy">
-  </iframe>
+    /* Navigation */
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  <p style="margin-top:20px;">
-    📍 <strong>Location:</strong> Wenchi, Bono Region, Ghana<br>
-    📧 <strong>Email:</strong> info@yavafarms.com
-  </p>
+    nav .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
 
-  <a href="mailto:info@yavafarms.com" class="btn">Contact Yava Farms</a>
-</section>
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; line-height:1.6; color:#222; }
-    header { background:#1b5e20; color:#fff; padding:60px 20px; text-align:center; }
-    header h1 { font-size:2.5rem; margin-bottom:10px; }
-    header p { font-size:1.1rem; max-width:800px; margin:0 auto; }
-    section { padding:50px 20px; max-width:1100px; margin:0 auto; }
-    h2 { color:#1b5e20; margin-bottom:15px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; }
-    .card { background:#f7f7f7; padding:25px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); }
-    .card h3 { margin-top:0; color:#2e7d32; }
-    .btn { display:inline-block; background:#2e7d32; color:#fff; padding:12px 22px; border-radius:6px; text-decoration:none; font-weight:bold; }
-    .btn:hover { background:#1b5e20; }
-    footer { background:#111; color:#ccc; text-align:center; padding:25px 15px; }
+    nav a {
+      text-decoration: none;
+      color: #1b5e20;
+      font-weight: bold;
+      margin-left: 15px;
+    }
+
+    header {
+      background: #1b5e20;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #1b5e20;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #f7f7f7;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2e7d32;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    img {
+      max-width: 100%;
+    }
   </style>
 </head>
+
 <body>
-<nav style="background:#ffffff; border-bottom:1px solid #e0e0e0; position:sticky; top:0; z-index:1000;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:15px 20px;">
-    
-    <strong style="color:#1b5e20; font-size:1.1rem;">
-      Yava Farms
-    </strong>
 
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <strong>Yava Farms</strong>
     <div>
-      <a href="index.html" style="margin-right:15px; text-decoration:none; color:#1b5e20; font-weight:bold;">Home</a>
-      <a href="agrisisters.html" style="margin-right:15px; text-decoration:none; color:#1b5e20; font-weight:bold;">Agrisisters</a>
-      <a href="art_that_feeds_communities.html" style="margin-right:15px; text-decoration:none; color:#1b5e20; font-weight:bold;">Art Project</a>
-      <a href="#donate" style="margin-right:15px; text-decoration:none; color:#1b5e20; font-weight:bold;">Donate</a>
-      <a href="mailto:info@yavafarms.com" style="text-decoration:none; color:#1b5e20; font-weight:bold;">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="agrisisters.html">Agrisisters</a>
+      <a href="art_that_feeds_communities.html">Art Project</a>
+      <a href="#visit">Visit Us</a>
+      <a href="mailto:info@yavafarms.com">Contact</a>
     </div>
-
   </div>
 </nav>
-  <header>
+
+<!-- Header -->
+<header>
   <h1>Yava Farms & Agricultural Consultancy</h1>
   <p>Building climate-smart agriculture, empowering youth and women, and strengthening food systems in Ghana.</p>
-</header><!-- Hero Image --><section style="padding:0; max-width:none;">
-  <img src="images/hero.jpg" alt="Yava Farms Climate Smart Agriculture" style="width:100%; max-height:450px; object-fit:cover;" />
-</section><section>
+</header>
+
+<!-- Hero Image -->
+<section style="padding:0; max-width:none;">
+  <img src="images/hero.jpg" alt="Yava Farms Climate Smart Agriculture" style="width:100%; max-height:450px; object-fit:cover;">
+</section>
+
+<!-- About -->
+<section>
   <h2>About Us</h2>
   <p>
-    Yava Farms and Agricultural Consultancy is a Ghanaian agribusiness committed to climate-smart agriculture, food security, and inclusive rural development. We work at the intersection of sustainable production, youth and women empowerment, and innovative financing models.
+    Yava Farms and Agricultural Consultancy is a Ghanaian agribusiness committed to climate-smart agriculture, food security, and inclusive rural development.
   </p>
   <p>
-    Our work responds directly to climate change challenges by restoring degraded land, improving water efficiency, and building resilient farming communities.
+    We respond to climate change by restoring degraded land, improving water efficiency, and building resilient farming communities.
   </p>
-</section><section>
+</section>
+
+<!-- What We Do -->
+<section>
   <h2>What We Do</h2>
   <div class="grid">
     <div class="card">
@@ -81,59 +154,80 @@
     </div>
     <div class="card">
       <h3>Agricultural Consultancy</h3>
-      <p>Technical advisory services, farm planning, irrigation design, and production management support.</p>
+      <p>Farm planning, irrigation design, training, and production management support.</p>
     </div>
     <div class="card">
       <h3>Youth & Women Empowerment</h3>
-      <p>Implementation of initiatives such as Agrisisters and cooperative farming programs.</p>
+      <p>Implementation of Agrisisters and cooperative farming programs.</p>
     </div>
     <div class="card">
       <h3>Climate-Smart Solutions</h3>
-      <p>Soil restoration, efficient water use, and sustainable farming models that respond to climate change.</p>
+      <p>Soil restoration, efficient water use, and sustainable food systems.</p>
     </div>
   </div>
-</section><section>
-  <h2>Upcoming Initiatives</h2>
+</section>
+
+<!-- Initiatives -->
+<section>
+  <h2>Our Initiatives</h2>
   <div class="grid">
     <div class="card">
       <h3>Agrisisters</h3>
       <p>
-        A women-led, climate-smart agriculture program focused on access to land, skills training, inputs, and guaranteed markets. Agrisisters empowers rural women to become economically independent while contributing to food security.
-      </p><a href="agrisisters.html">Learn more about Agrisisters →</a>
+        A women-led climate-smart agriculture initiative focused on land access, training, inputs, and markets.
+      </p>
+      <a href="agrisisters.html">Learn more →</a>
     </div>
     <div class="card">
       <h3>Art That Feeds Communities</h3>
       <p>
-        A creative climate-action initiative that uses powerful environmental art to raise funds, awareness, and partnerships for sustainable farming projects and land restoration.
-      </p><a href="art_that_feeds_communities.html">Click Here and Learn More →</a>
+        A creative climate-action project using environmental art to fund sustainable farming.
+      </p>
+      <a href="art_that_feeds_communities.html">Learn more →</a>
     </div>
   </div>
-</section><section>
-  <h2>Partnerships & Impact</h2>
-  <p>
-    Yava Farms collaborates with government institutions, development partners, private sector actors, and local communities. Our projects create jobs, improve household incomes, strengthen local food systems, and build climate resilience.
-  </p>
-</section><section>
+</section>
+
+<!-- Gallery -->
+<section>
   <h2>Photo Gallery</h2>
   <div class="grid">
-    <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;" />
-    <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;" />
-    <img src="images/gallery3.jpg" style="width:100%; border-radius:10px;" />    
-    <img src="images/gallery4.jpg" style="width:100%; border-radius:10px;" />
-    <img src="images/greenhouse.jpg" style="width:100%; border-radius:10px;" />
-    <img src="images/training.jpg" style="width:100%; border-radius:10px;" />
+    <img src="images/gallery1.jpg">
+    <img src="images/gallery2.jpg">
+    <img src="images/gallery3.jpg">
+    <img src="images/gallery4.jpg">
+    <img src="images/greenhouse.jpg">
+    <img src="images/training.jpg">
   </div>
+</section>
 
-</div>
-
-  </div>
-</section><section>
-  <h2>Get in Touch</h2>
+<!-- Visit Us -->
+<section id="visit">
+  <h2>Visit Us</h2>
   <p>
-    Interested in partnering, supporting, or learning more about our work?
+    Our operations are based in Wenchi, Bono Region, Ghana. Visits are welcome by appointment.
   </p>
+
+  <iframe
+    src="https://www.google.com/maps?q=Wenchi,Bono%20Region,Ghana&output=embed"
+    width="100%"
+    height="350"
+    style="border:0; border-radius:10px;"
+    loading="lazy">
+  </iframe>
+
+  <p style="margin-top:20px;">
+    📍 Wenchi, Bono Region, Ghana<br>
+    📧 info@yavafarms.com
+  </p>
+
   <a href="mailto:info@yavafarms.com" class="btn">Contact Yava Farms</a>
-</section><footer>
+</section>
+
+<!-- Footer -->
+<footer>
   <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Ghana</p>
-</footer></body>
+</footer>
+
+</body>
 </html>
