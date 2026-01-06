@@ -16,29 +16,34 @@
       background: #f9fafb;
     }
 
-    /* Navigation */
+    /* Navigation (same as other pages) */
     nav {
-      background: #022c22;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    nav .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
     nav a {
-      color: #ffffff;
-      margin-left: 20px;
       text-decoration: none;
-      font-weight: 600;
+      color: #14532d;
+      font-weight: bold;
+      margin-left: 15px;
     }
 
     header {
-      background:
-        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-        url('painting.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+                  url('painting.jpg') center/cover no-repeat;
       color: #fff;
       padding: 110px 20px;
       text-align: center;
@@ -88,7 +93,7 @@
     }
 
     .card {
-      background: #ffffff;
+      background: #fff;
       padding: 30px;
       border-radius: 14px;
       box-shadow: 0 10px 25px rgba(0,0,0,.06);
@@ -100,7 +105,7 @@
 
     footer {
       background: #022c22;
-      color: #ffffff;
+      color: #fff;
       text-align: center;
       padding: 60px 20px;
     }
@@ -110,28 +115,31 @@
       text-decoration: none;
     }
 
-    img {
+    input, select, textarea {
       width: 100%;
-      border-radius: 10px;
+      padding: 10px;
+      margin-top: 5px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- Navigation -->
 <nav>
-  <strong style="color:#fff">Art That Feeds Communities</strong>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="#story">The Story</a>
-    <a href="#solution">Solution</a>
-    <a href="#impact">Impact</a>
-    <a href="#partner">Partner</a>
+  <div class="nav-container">
+    <strong>Yava Farms</strong>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="agrisisters.html">Agrisisters</a>
+      <a href="art_that_feeds_communities.html">Art Project</a>
+      <a href="index.html#visit">Visit Us</a>
+      <a href="mailto:info@yavafarms.com">Contact</a>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 <header id="home">
   <h1>When Trees Cry, Farms Must Rise</h1>
   <p>Using powerful climate art to fund sustainable agriculture, youth employment, and food security in Ghana.</p>
@@ -139,29 +147,28 @@
   <a href="#story" class="btn secondary">Discover the Story</a>
 </header>
 
-<!-- STORY -->
+<!-- Story -->
 <section id="story">
   <h2>The Story Behind the Painting</h2>
-  <p><strong>“Tears of the Forest”</strong> depicts two trees that have been cut down. One tree weeps. The other survives by collecting those tears in a watering can and using them to nourish itself.</p>
-  <p>This is not just art. It is a warning.</p>
-  <p>Yava Farms is transforming this artwork into action — turning emotion into food, jobs, and climate resilience.</p>
+  <p><strong>“Tears of the Forest”</strong> depicts two trees that have been cut down. One weeps. The other survives by collecting those tears to nourish itself.</p>
+  <p>This is not just art — it is a warning about climate change and survival.</p>
+  <p>Yava Farms is transforming this artwork into action, turning emotion into food, jobs, and resilience.</p>
 </section>
 
-<!-- SOLUTION -->
+<!-- Solution -->
 <section id="solution" class="highlight">
   <h2>Our Climate-Smart Solution</h2>
   <div class="grid">
     <div class="card">Irrigated vegetable and rice farming</div>
     <div class="card">Greenhouse and open-field systems</div>
-    <div class="card">Youth & women cooperatives (70% women)</div>
-    <div class="card">Solar-powered energy & cold storage</div>
+    <div class="card">Youth and women cooperatives (70% women)</div>
+    <div class="card">Solar-powered energy and cold storage</div>
     <div class="card">Affordable modern mud housing</div>
     <div class="card">Future fish farming integration</div>
   </div>
-  <p style="margin-top:30px"><strong>Art funds agriculture. Agriculture restores dignity.</strong></p>
 </section>
 
-<!-- IMPACT -->
+<!-- Impact -->
 <section id="impact">
   <h2>Impact We Are Scaling</h2>
   <div class="grid">
@@ -174,7 +181,7 @@
   </div>
 </section>
 
-<!-- PARTNER -->
+<!-- Partnership -->
 <section id="partner" class="highlight">
   <h2>Partner With Us</h2>
 
@@ -182,15 +189,13 @@
     <div class="card">
       <h3>Legacy Partner</h3>
       <p><strong>$250,000+</strong></p>
-      <p>Naming rights, full ESG & SDG reporting.</p>
+      <p>Naming rights, ESG & SDG reporting.</p>
     </div>
-
     <div class="card">
       <h3>Impact Partner</h3>
       <p><strong>$50,000 – $200,000</strong></p>
-      <p>Sponsor irrigation, greenhouses, solar or training.</p>
+      <p>Sponsor irrigation, greenhouses, solar, or training.</p>
     </div>
-
     <div class="card">
       <h3>Supporter</h3>
       <p>Limited edition prints, ESG licensing, advocacy.</p>
@@ -199,21 +204,22 @@
 
   <h3 style="margin-top:50px">Request a Partnership Conversation</h3>
 
+  <!-- FIXED FORM -->
   <form action="https://formspree.io/f/xdakebod" method="POST" class="card" style="max-width:600px;">
-    <label>Full Name<br>
-      <input type="text" name="name" required style="width:100%; padding:10px">
+    <label>Full Name
+      <input type="text" name="name" required>
     </label><br><br>
 
-    <label>Email Address<br>
-      <input type="email" name="email" required style="width:100%; padding:10px">
+    <label>Email
+      <input type="email" name="email" required>
     </label><br><br>
 
-    <label>Organization<br>
-      <input type="text" name="organization" style="width:100%; padding:10px">
+    <label>Organization
+      <input type="text" name="organization">
     </label><br><br>
 
-    <label>Interest Level<br>
-      <select name="interest" style="width:100%; padding:10px">
+    <label>Interest Level
+      <select name="interest">
         <option>Legacy Partner ($250k+)</option>
         <option>Impact Partner ($50k–$200k)</option>
         <option>Supporter / Licensing</option>
@@ -221,24 +227,24 @@
       </select>
     </label><br><br>
 
-    <label>Message<br>
-      <textarea name="message" rows="4" style="width:100%; padding:10px"></textarea>
+    <label>Message
+      <textarea name="message" rows="4"></textarea>
     </label><br><br>
 
     <button type="submit" class="btn">Submit Request</button>
   </form>
 </section>
 
-<!-- GALLERY -->
+<!-- Gallery -->
 <section>
   <h2>Photo Gallery</h2>
   <div class="grid">
-    <img src="images/gallery1.jpg" alt="Gallery image 1">
-    <img src="images/gallery2.jpg" alt="Gallery image 2">
+    <img src="images/gallery1.jpg" style="width:100%; border-radius:10px;">
+    <img src="images/gallery2.jpg" style="width:100%; border-radius:10px;">
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
   <p><strong>Yava Farms & Agricultural Consultancy</strong></p>
   <p>Wenchi, Bono Region – Ghana</p>
