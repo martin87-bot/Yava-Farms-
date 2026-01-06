@@ -1,58 +1,168 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art That Feeds Communities | Yava Farms</title>
+
   <meta name="description" content="A global climate-art campaign using the painting 'Tears of the Forest' to fund climate-smart agriculture, youth and women livelihoods in Ghana." />
+
   <style>
-    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; line-height:1.6; color:#1f2933; background:#f9fafb; }
-    nav { background:#022c22; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
-    nav a { color:#ffffff; margin-left:20px; text-decoration:none; font-weight:600; }
-    header { background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)), url('painting.jpg') center/cover no-repeat; color:#fff; padding:110px 20px; text-align:center; }
-    header h1 { font-size:3rem; }
-    header p { max-width:720px; margin:20px auto 30px; font-size:1.2rem; }
-    .btn { display:inline-block; background:#16a34a; color:#fff; padding:14px 28px; border-radius:6px; text-decoration:none; font-weight:600; }
-    .btn.secondary { background:#0f766e; }
-    section { padding:80px 20px; max-width:1100px; margin:auto; }
-    h2 { font-size:2.3rem; color:#14532d; margin-bottom:20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px; }
-    .card { background:#fff; padding:30px; border-radius:14px; box-shadow:0 10px 25px rgba(0,0,0,.06); }
-    .highlight { background:#ecfdf5; }
-    footer { background:#022c22; color:#fff; text-align:center; padding:60px 20px; }
-    footer a { color:#6ee7b7; text-decoration:none; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2933;
+      background: #f9fafb;
+    }
+
+    /* Navigation */
+    nav {
+      background: #022c22;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header {
+      background:
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+        url('painting.jpg') center/cover no-repeat;
+      color: #fff;
+      padding: 110px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      max-width: 720px;
+      margin: 20px auto 30px;
+      font-size: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #16a34a;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 5px;
+    }
+
+    .btn.secondary {
+      background: #0f766e;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      color: #14532d;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .highlight {
+      background: #ecfdf5;
+    }
+
+    footer {
+      background: #022c22;
+      color: #ffffff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer a {
+      color: #6ee7b7;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
   </style>
 </head>
-<body><!-- NAVIGATION --><nav>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
   <strong style="color:#fff">Art That Feeds Communities</strong>
   <div>
-    <a href="#home">Home</a>
+    <a href="index.html">Home</a>
     <a href="#story">The Story</a>
-    <a href="#solution">Our Solution</a>
+    <a href="#solution">Solution</a>
     <a href="#impact">Impact</a>
     <a href="#partner">Partner</a>
   </div>
-</nav><!-- HOME / HERO --><header id="home">
+</nav>
+
+<!-- HERO -->
+<header id="home">
   <h1>When Trees Cry, Farms Must Rise</h1>
   <p>Using powerful climate art to fund sustainable agriculture, youth employment, and food security in Ghana.</p>
   <a href="#partner" class="btn">Become a Partner</a>
   <a href="#story" class="btn secondary">Discover the Story</a>
-</header><!-- STORY PAGE --><section id="story">
+</header>
+
+<!-- STORY -->
+<section id="story">
   <h2>The Story Behind the Painting</h2>
   <p><strong>“Tears of the Forest”</strong> depicts two trees that have been cut down. One tree weeps. The other survives by collecting those tears in a watering can and using them to nourish itself.</p>
-  <p>This is not just art. It is a warning. Climate change has reached a point where nature is forced to survive on its own suffering.</p>
-  <p>Instead of allowing this artwork to hang silently, Yava Farms is transforming it into a catalyst for action — turning emotion into food, jobs, and resilience.</p>
-</section><!-- SOLUTION PAGE --><section id="solution" class="highlight">
+  <p>This is not just art. It is a warning.</p>
+  <p>Yava Farms is transforming this artwork into action — turning emotion into food, jobs, and climate resilience.</p>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution" class="highlight">
   <h2>Our Climate-Smart Solution</h2>
   <div class="grid">
     <div class="card">Irrigated vegetable and rice farming</div>
     <div class="card">Greenhouse and open-field systems</div>
-    <div class="card">Youth and women cooperatives (70% women)</div>
-    <div class="card">Solar-powered energy and cold storage</div>
+    <div class="card">Youth & women cooperatives (70% women)</div>
+    <div class="card">Solar-powered energy & cold storage</div>
     <div class="card">Affordable modern mud housing</div>
     <div class="card">Future fish farming integration</div>
   </div>
-  <p style="margin-top:30px">Art funds agriculture. Agriculture restores dignity.</p>
-</section><!-- IMPACT PAGE --><section id="impact">
+  <p style="margin-top:30px"><strong>Art funds agriculture. Agriculture restores dignity.</strong></p>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
   <h2>Impact We Are Scaling</h2>
   <div class="grid">
     <div class="card">300+ youth & women employed</div>
@@ -62,28 +172,46 @@
     <div class="card">Stronger rural incomes</div>
     <div class="card">Improved climate resilience</div>
   </div>
-</section><!-- PARTNERSHIP PAGE --><section id="partner" class="highlight">
+</section>
+
+<!-- PARTNER -->
+<section id="partner" class="highlight">
   <h2>Partner With Us</h2>
+
   <div class="grid">
     <div class="card">
       <h3>Legacy Partner</h3>
       <p><strong>$250,000+</strong></p>
-      <p>Naming rights to villages, farm blocks, or training centers. Full ESG & SDG reporting.</p>
+      <p>Naming rights, full ESG & SDG reporting.</p>
     </div>
+
     <div class="card">
       <h3>Impact Partner</h3>
       <p><strong>$50,000 – $200,000</strong></p>
-      <p>Sponsor irrigation zones, greenhouses, solar units, or youth training cohorts.</p>
+      <p>Sponsor irrigation, greenhouses, solar or training.</p>
     </div>
+
     <div class="card">
       <h3>Supporter</h3>
-      <p>Limited edition prints, ESG licensing, advocacy support.</p>
+      <p>Limited edition prints, ESG licensing, advocacy.</p>
     </div>
-  </div>  <h3 style="margin-top:50px">Request a Partnership Conversation</h3>
-  <p>Complete the form below and our team will contact you within 48 hours.</p>  <form https://formspree.io/f/xdakebod" method="POST" class="card" style="max-width:600px; margin-top:20px">
-    <label>Full Name<br><input type="text" name="name" required style="width:100%; padding:10px"></label><br><br>
-    <label>Email Address<br><input type="email" name="email" required style="width:100%; padding:10px"></label><br><br>
-    <label>Organization (optional)<br><input type="text" name="organization" style="width:100%; padding:10px"></label><br><br>
+  </div>
+
+  <h3 style="margin-top:50px">Request a Partnership Conversation</h3>
+
+  <form action="https://formspree.io/f/xdakebod" method="POST" class="card" style="max-width:600px;">
+    <label>Full Name<br>
+      <input type="text" name="name" required style="width:100%; padding:10px">
+    </label><br><br>
+
+    <label>Email Address<br>
+      <input type="email" name="email" required style="width:100%; padding:10px">
+    </label><br><br>
+
+    <label>Organization<br>
+      <input type="text" name="organization" style="width:100%; padding:10px">
+    </label><br><br>
+
     <label>Interest Level<br>
       <select name="interest" style="width:100%; padding:10px">
         <option>Legacy Partner ($250k+)</option>
@@ -92,27 +220,32 @@
         <option>General Inquiry</option>
       </select>
     </label><br><br>
-    <label>Message<br><textarea name="message" rows="4" style="width:100%; padding:10px"></textarea></label><br><br>
+
+    <label>Message<br>
+      <textarea name="message" rows="4" style="width:100%; padding:10px"></textarea>
+    </label><br><br>
+
     <button type="submit" class="btn">Submit Request</button>
-  </form>  <p style="margin-top:30px"><strong>This painting will grow food. This partnership will change lives.</strong></p>
+  </form>
+</section>
+
+<!-- GALLERY -->
 <section>
   <h2>Photo Gallery</h2>
-
-  <div style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  ">
-    <img src="images/gallery1.jpg" alt="Gallery image 1" style="width:100%; border-radius:10px;">
-    <img src="images/gallery2.jpg" alt="Gallery image 2" style="width:100%; border-radius:10px;">
-    
+  <div class="grid">
+    <img src="images/gallery1.jpg" alt="Gallery image 1">
+    <img src="images/gallery2.jpg" alt="Gallery image 2">
   </div>
 </section>
-</section><!-- FOOTER --><footer>
+
+<!-- FOOTER -->
+<footer>
   <p><strong>Yava Farms & Agricultural Consultancy</strong></p>
   <p>Wenchi, Bono Region – Ghana</p>
   <p>Email: <a href="mailto:info@yavafarms.com">info@yavafarms.com</a></p>
   <p><em>When forests cry, farmers must rise.</em></p>
-  <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
-</footer></body>
-    </html>
+  <p>&copy; 2026 Yava Farms & Agricultural Consultancy</p>
+</footer>
+
+</body>
+</html>
