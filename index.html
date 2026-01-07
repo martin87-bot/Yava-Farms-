@@ -205,7 +205,29 @@
   background: #2e7d32;
   border-radius: 10px;
 }
+    
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 
+.auto-gallery {
+  overflow: hidden;
+  position: relative;
+}
+
+.auto-gallery-track {
+  display: flex;
+  width: max-content;
+  animation: slide 35s linear infinite;
+}
+
+.auto-gallery-track img {
+  height: 220px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
   </style>
 </head>
 
@@ -304,14 +326,22 @@
 <!-- Gallery -->
 <section>
   <h2>Photo Gallery</h2>
-  <div class="gallery-scroll">
-  <img src="images/gallery1.jpg" alt="Farm activity">
-  <img src="images/gallery2.jpg" alt="Vegetable production">
-  <img src="images/gallery3.jpg" alt="Youth training">
-  <img src="images/gallery4.jpg" alt="Women farmers">
-  <img src="images/greenhouse.jpg" alt="Greenhouse farming">
-  <img src="images/training.jpg" alt="Capacity building">
-</div>
+
+  <div class="auto-gallery">
+    <div class="auto-gallery-track">
+      <img src="images/gallery1.jpg">
+      <img src="images/gallery2.jpg">
+      <img src="images/gallery3.jpg">
+      <img src="images/gallery4.jpg">
+      <img src="images/greenhouse.jpg">
+      <img src="images/training.jpg">
+
+      <!-- Duplicate for smooth looping -->
+      <img src="images/gallery1.jpg">
+      <img src="images/gallery2.jpg">
+      <img src="images/gallery3.jpg">
+    </div>
+  </div>
 </section>
 
 <!-- Visit Us -->
