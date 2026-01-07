@@ -260,9 +260,14 @@
   font-size: 1.15rem;
   max-width: 800px;
   margin: 0 auto;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;        /* ✅ allow wrapping */
+  overflow: visible;          /* ✅ show all text */
   border-right: 3px solid rgba(255,255,255,0.8);
+  padding-right: 5px;
+}
+
+/* Cursor blink */
+.typing {
   animation: blinkCursor 0.8s infinite;
 }
 
@@ -471,20 +476,26 @@
 </script>
   <script>
   const text =
-    "Building climate-smart agriculture, empowering youth and women, and strengthening food systems in Ghana.";
+    "Building climate-smart agriculture, empowering women and youth, and strengthening food systems in Ghana.";
 
-  const speed = 70; // typing speed (ms)
+  const speed = 70;       // typing speed (ms)
   const stayTime = 30000; // 30 seconds
 
   let index = 0;
   const element = document.getElementById("typewriter");
 
   function typeText() {
+    element.classList.add("typing"); // show cursor
+
     if (index < text.length) {
       element.textContent += text.charAt(index);
       index++;
       setTimeout(typeText, speed);
     } else {
+      // Stop cursor after typing
+      element.classList.remove("typing");
+
+      // Restart after 30 seconds
       setTimeout(resetText, stayTime);
     }
   }
@@ -495,8 +506,7 @@
     typeText();
   }
 
-  // Start typing
   typeText();
-  </script>
+</script>
 </body>
 </html>
