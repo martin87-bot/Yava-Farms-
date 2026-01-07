@@ -228,6 +228,23 @@
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+   .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+} 
   </style>
 </head>
 
@@ -380,5 +397,20 @@
     📞 Call Us
   </a>
 </div>
+  <div class="lightbox" id="lightbox">
+  <img id="lightbox-img">
+</div>
+  <script>
+  document.querySelectorAll('.auto-gallery-track img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightbox').style.display = 'flex';
+      document.getElementById('lightbox-img').src = img.src;
+    });
+  });
+
+  document.getElementById('lightbox').onclick = function () {
+    this.style.display = 'none';
+  };
+  </script>
 </body>
 </html>
