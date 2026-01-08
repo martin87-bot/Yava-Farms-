@@ -13,85 +13,52 @@
       color: #222;
     }
 
-    /* Navigation */
-    nav {
-      background: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+   /* Navigation */
+.top-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    nav .nav-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-    }
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #2e7d32;
-      font-weight: bold;
-      margin-left: 15px;
-    }
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    header {
-      background: #2e7d32;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+.logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
 
-    header h1 {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
+.logo span {
+  font-weight: bold;
+  color: #2e7d32;
+  font-size: 1.1rem;
+}
 
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+/* Nav Links */
+.nav-links a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-left: 15px;
+}
 
-    h2 {
-      color: #2e7d32;
-      margin-bottom: 15px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: #f7f7f7;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .btn {
-      display: inline-block;
-      background: #2e7d32;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px 5px 0 0;
-    }
-
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 25px 15px;
-    }
-    /* Mobile Menu */
+/* Mobile Menu */
 #menu-toggle {
   display: none;
 }
@@ -100,31 +67,26 @@
   display: none;
   font-size: 28px;
   cursor: pointer;
+  color: #2e7d32;
 }
 
-/* Desktop */
-.nav-links a {
-  margin-left: 15px;
-}
-
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
-    color: #1b5e20;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    background: #ffffff;
     position: absolute;
-    top: 60px;
+    top: 65px;
     right: 20px;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #ffffff;
+    flex-direction: column;
+    width: 220px;
     padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   }
 
   .nav-links a {
@@ -134,14 +96,13 @@
   #menu-toggle:checked + .menu-icon + .nav-links {
     display: flex;
   }
-}
+} 
   </style>
 </head>
 
 <body>
-<!-- Top Navigation -->
 <nav class="top-nav">
-  <div class="nav-wrapper">
+  <div class="nav-container">
 
     <!-- Logo -->
     <div class="logo">
@@ -149,12 +110,9 @@
       <span>Yava Farms</span>
     </div>
 
-    <!-- Hamburger Toggle -->
-    <input type="checkbox" id="nav-toggle">
-
-    <label for="nav-toggle" class="hamburger">
-      ☰
-    </label>
+    <!-- Mobile Toggle -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
 
     <!-- Navigation Links -->
     <div class="nav-links">
