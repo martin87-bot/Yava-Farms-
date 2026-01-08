@@ -230,6 +230,31 @@
     display: flex;
   }
 }
+    /* Core Values default */
+.core-values {
+  background: transparent;
+  color: #222;
+  transition: background 0.8s ease, color 0.8s ease;
+}
+
+/* When visible */
+.core-values.in-view {
+  background: #d3d3d3; /* light grey */
+  color: #ffffff;
+}
+
+/* Ensure text inside turns white */
+.core-values.in-view h2,
+.core-values.in-view p,
+.core-values.in-view li,
+.core-values.in-view .card {
+  color: #ffffff;
+}
+
+/* Optional: make cards slightly transparent */
+.core-values.in-view .card {
+  background: rgba(255,255,255,0.1);
+}
   </style>
 </head>
 
@@ -302,7 +327,7 @@
 </section>
 
 <!-- Values -->
-<section>
+<section id="core-values" class="core-values">
   <h2>Our Core Values</h2>
   <div class="grid">
     <div class="card">
@@ -409,6 +434,22 @@
 <footer>
   <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Ghana</p>
 </footer>
+<script>
+  const coreValues = document.querySelector('.core-values');
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        coreValues.classList.add('in-view');
+      } else {
+        coreValues.classList.remove('in-view'); // remove if you want repeat effect
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  observer.observe(coreValues);
+</script>
 </body>
 </html>
