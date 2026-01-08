@@ -1,224 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agrisisters Initiative | Yava Farms</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrisisters Initiative | Yava Farms</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #222;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height:1.6;
+  color:#222;
+}
 
-    /* ================= NAVIGATION ================= */
-    nav {
-      background: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* ========== NAVIGATION ========== */
+nav{
+  background:#fff;
+  border-bottom:1px solid #e0e0e0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    .nav-container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 20px;
-      position: relative;
-    }
+.nav-container{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+}
 
-    /* Logo */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .logo img {
-      height: 40px;
-      width: auto;
-      object-fit: contain;
-    }
+.logo img{
+  height:40px;
+  width:auto;
+  object-fit:contain;
+}
 
-    .logo span {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #2e7d32;
-    }
+.logo span{
+  font-weight:bold;
+  color:#2e7d32;
+  font-size:1.1rem;
+}
 
-    /* Desktop Links */
-    .nav-links a {
-      text-decoration: none;
-      color: #2e7d32;
-      font-weight: bold;
-      margin-left: 18px;
-    }
+.nav-links a{
+  text-decoration:none;
+  color:#2e7d32;
+  font-weight:bold;
+  margin-left:18px;
+}
 
-    /* Mobile toggle */
-    #menu-toggle {
-      display: none;
-    }
+#menu-toggle{display:none;}
 
-    .menu-icon {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: #2e7d32;
-      user-select: none;
-    }
+.menu-icon{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:#2e7d32;
+}
 
-    /* ================= HEADER ================= */
-    header {
-      background: #2e7d32;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+/* ========== HEADER ========== */
+header{
+  background:#2e7d32;
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+}
 
-    header h1 {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
+header h1{
+  font-size:2.3rem;
+  margin-bottom:10px;
+}
 
-    /* ================= CONTENT ================= */
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+/* ========== CONTENT ========== */
+section{
+  padding:50px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    h2 {
-      color: #2e7d32;
-      margin-bottom: 15px;
-    }
+h2{color:#2e7d32;}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:25px;
+}
 
-    .card {
-      background: #f7f7f7;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+.card{
+  background:#f7f7f7;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
 
-    .btn {
-      display: inline-block;
-      background: #2e7d32;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 6px 6px 0 0;
-    }
+.btn{
+  display:inline-block;
+  background:#2e7d32;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:6px 6px 0 0;
+}
 
-    /* ================= FOOTER ================= */
-    footer {
-      background: #111;
-      color: #ccc;
-      text-align: center;
-      padding: 25px 15px;
-    }
+/* ========== FOOTER ========== */
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:25px 15px;
+}
 
-    /* ================= MOBILE + ANIMATION ================= */
-    @media (max-width: 768px) {
+/* ========== MOBILE NAV ========== */
+@media(max-width:768px){
+  .menu-icon{display:block;}
 
-      .menu-icon {
-        display: block;
-      }
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:64px;
+    right:20px;
+    background:#fff;
+    width:220px;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+  }
 
-      .nav-links {
-        position: absolute;
-        top: 64px;
-        right: 20px;
-        background: #ffffff;
-        width: 220px;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  .nav-links a{margin:10px 0;}
 
-        /* Animation setup */
-        opacity: 0;
-        transform: translateY(-15px) scale(0.98);
-        pointer-events: none;
-
-        transition: 
-          opacity 0.3s ease,
-          transform 0.35s ease;
-        
-        display: flex;
-        flex-direction: column;
-      }
-
-      .nav-links a {
-        margin: 10px 0;
-      }
-
-      /* Animated open */
-      #menu-toggle:checked + .menu-icon + .nav-links {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        pointer-events: auto;
-      }
-    }
-  </style>
+  #menu-toggle:checked + .menu-icon + .nav-links{
+    display:flex;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<!-- NAVIGATION -->
 <nav>
-  <div class="nav-container">
+<div class="nav-container">
 
-    <!-- Logo -->
-    <div class="logo">
-      <img src="images/logo.jpg" alt="Yava Farms Logo">
-      <span>Yava Farms</span>
-    </div>
+<div class="logo">
+  <img src="images/logo.jpg" alt="Yava Farms Logo">
+  <span>Yava Farms</span>
+</div>
 
-    <!-- Mobile Toggle -->
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">☰</label>
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-icon">☰</label>
 
-    <!-- Navigation -->
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="agrisisters.html">Agrisisters</a>
-      <a href="art_that_feeds_communities.html">Art Project</a>
-      <a href="#visit">Visit Us</a>
-      <a href="mailto:info@yavafarms.com">Contact</a>
-    </div>
+<div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="agrisisters.html">Agrisisters</a>
+  <a href="art_that_feeds_communities.html">Art Project</a>
+  <a href="#visit">Visit Us</a>
+  <a href="mailto:info@yavafarms.com">Contact</a>
+</div>
 
-  </div>
+</div>
 </nav>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header>
-  <h1>Agrisisters Initiative</h1>
-  <p>Empowering women through climate-smart agriculture</p>
+<h1>Agrisisters Initiative</h1>
+<p>Empowering women through climate-smart agriculture</p>
 </header>
 
+<!-- OVERVIEW -->
 <section>
-  <h2>Overview</h2>
-  <p>
-    The Agrisisters Initiative is a flagship women-led program of Yava Farms and Agricultural Consultancy.
-    It empowers rural women with access to land, climate-smart farming skills, modern inputs, and structured markets.
-  </p>
+<h2>Overview</h2>
+<p>
+The Agrisisters Initiative is a flagship women-led program of Yava Farms and Agricultural Consultancy.
+It empowers rural women with access to land, climate-smart farming skills, modern inputs, and structured markets.
+</p>
+<p>
+Agrisisters responds directly to climate change, rural poverty, and gender inequality in agriculture.
+</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- WHY -->
+<section>
+<h2>Why Agrisisters?</h2>
+<div class="grid">
+<div class="card">
+<h3>Women at the Center</h3>
+<p>Women form the backbone of Ghana’s food system yet face systemic barriers.</p>
+</div>
+<div class="card">
+<h3>Climate-Smart Farming</h3>
+<p>Sustainable practices that increase yields while protecting resources.</p>
+</div>
+<div class="card">
+<h3>Income & Dignity</h3>
+<p>Reliable incomes and economic independence for women.</p>
+</div>
+</div>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+<h2>What We Do</h2>
+<ul>
+<li>Access to land through cooperatives</li>
+<li>Hands-on training in farming & agribusiness</li>
+<li>Supply of seeds, inputs & irrigation</li>
+<li>Guaranteed markets via offtake partnerships</li>
+<li>Savings & cooperative growth models</li>
+</ul>
+</section>
+
+<!-- IMPACT -->
+<section>
+<h2>Impact Goals</h2>
+<div class="grid">
+<div class="card">
+<h3>Women Empowered</h3>
+<p>Support hundreds of rural women farmers.</p>
+</div>
+<div class="card">
+<h3>Food Security</h3>
+<p>Increase nutritious local food supply.</p>
+</div>
+</div>
+</section>
+
+<!-- SUPPORT -->
+<section>
+<h2>Support Our Work</h2>
+<div class="grid">
+<div class="card">
+<h3>Sponsor a Climate-Smart Farm</h3>
+<p>Support women-led farms with inputs & training.</p>
+</div>
+<div class="card">
+<h3>Support Agrisisters</h3>
+<p>Fund land prep, seeds, training & market access.</p>
+</div>
+</div>
+
+<p><strong>Interested in supporting?</strong></p>
+
+<a href="Yava_Farms_Pitch_Deck.pdf" class="btn">
+Download Pitch Deck
+</a>
+<a href="mailto:info@yavafarms.com" class="btn">
+Become a Partner
+</a>
+</section>
+
+<!-- CONTRIBUTIONS -->
+<section>
+<h2>Make a Contribution</h2>
+<div class="grid">
+<div class="card">
+<h4>🏦 Bank Transfer</h4>
+<p><strong>Bank:</strong> National Investment Bank</p>
+<p><strong>Account Name:</strong> Yava Farms & Agricultural Consultancy</p>
+<p><strong>Account Number:</strong> 1124092119501</p>
+<p><strong>Branch:</strong> Wenchi</p>
+</div>
+
+<div class="card">
+<h4>🌍 International Partners</h4>
+<p>For grants or international transfers, contact us.</p>
+<a href="mailto:info@yavafarms.com" class="btn">Request Payment Details</a>
+</div>
+</div>
+</section>
+
+<!-- PARTNER -->
+<section>
+<h2>Partner With Agrisisters</h2>
+<p>
+We welcome partnerships with donors, CSR programs, and development agencies.
+</p>
+<a href="mailto:info@yavafarms.com" class="btn">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
+<p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
 </footer>
 
 </body>
