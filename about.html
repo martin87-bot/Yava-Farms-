@@ -230,31 +230,41 @@
     display: flex;
   }
 }
-    /* Core Values default */
+   /* Core Values – default state */
 .core-values {
-  background: transparent;
+  background: #ffffff;
   color: #222;
-  transition: background 0.8s ease, color 0.8s ease;
+  transition: background-color 1s ease, color 1s ease;
 }
 
-/* When visible */
-.core-values.in-view {
-  background: #d3d3d3; /* orange */
+/* Active state – inspired by the screenshot */
+.core-values.active {
+  background: #0f2b3a; /* deep navy blue */
   color: #ffffff;
 }
 
-/* Ensure text inside turns white */
-.core-values.in-view h2,
-.core-values.in-view p,
-.core-values.in-view li,
-.core-values.in-view .card {
+/* Ensure ALL text is white */
+.core-values.active h2,
+.core-values.active h3,
+.core-values.active p,
+.core-values.active li {
   color: #ffffff;
 }
 
-/* Optional: make cards slightly transparent */
-.core-values.in-view .card {
-  background: rgba(255,255,255,0.1);
+/* Cards inside core values */
+.core-values .card {
+  transition: background 1s ease, color 1s ease, transform 0.6s ease;
 }
+
+.core-values.active .card {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+}
+
+/* Optional subtle lift */
+.core-values.active .card:hover {
+  transform: translateY(-6px);
+} 
   </style>
 </head>
 
@@ -327,35 +337,28 @@
 </section>
 
 <!-- Values -->
-<section id="core-values" class="core-values">
+<section class="core-values">
   <h2>Our Core Values</h2>
+
   <div class="grid">
     <div class="card">
       <h3>Sustainability</h3>
-      <p>
-        We promote practices that protect soil, water, and ecosystems for future generations.
-      </p>
+      <p>We protect soil, water, and ecosystems.</p>
     </div>
 
     <div class="card">
       <h3>Inclusion</h3>
-      <p>
-        We intentionally empower women and youth as key drivers of agricultural transformation.
-      </p>
+      <p>Women and youth are at the center of our work.</p>
     </div>
 
     <div class="card">
       <h3>Innovation</h3>
-      <p>
-        We apply modern technology, data, and climate-smart solutions to traditional farming systems.
-      </p>
+      <p>Climate-smart and data-driven agriculture.</p>
     </div>
 
     <div class="card">
       <h3>Integrity</h3>
-      <p>
-        We operate with transparency, accountability, and respect for communities and partners.
-      </p>
+      <p>Transparency, accountability, and trust.</p>
     </div>
   </div>
 </section>
@@ -435,21 +438,24 @@
   <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Ghana</p>
 </footer>
 <script>
-  const coreValues = document.querySelector('.core-values');
+const coreValuesSection = document.querySelector('.core-values');
 
-  const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(
+  (entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        coreValues.classList.add('in-view');
+        coreValuesSection.classList.add('active');
       } else {
-        coreValues.classList.remove('in-view'); // remove if you want repeat effect
+        coreValuesSection.classList.remove('active');
       }
     });
-  }, {
-    threshold: 0.3
-  });
+  },
+  {
+    threshold: 0.35
+  }
+);
 
-  observer.observe(coreValues);
+observer.observe(coreValuesSection);
 </script>
 </body>
 </html>
