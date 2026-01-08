@@ -101,6 +101,57 @@
       text-align: center;
       padding: 25px 15px;
     }
+    /* Team Section */
+.team-section {
+  text-align: center;
+}
+
+.team-intro {
+  max-width: 750px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.team-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #1b5e20;
+}
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  color: #1b5e20;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+}
+
+.role {
+  display: inline-block;
+  background: #2e7d32;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
   </style>
 </head>
 
@@ -194,39 +245,72 @@
 </section>
 
 <!-- Team -->
-<section>
+<section class="team-section">
   <h2>Our Team</h2>
-  <p>
-    Yava Farms is driven by a multidisciplinary team of agricultural professionals, engineers, trainers, and community facilitators passionate about sustainable development.
+  <p class="team-intro">
+    Yava Farms is led by a multidisciplinary team committed to climate-smart agriculture,
+    youth and women empowerment, and sustainable food systems.
   </p>
 
-  <div class="grid">
-    <div class="card team-card">
-      <img src="images/team1.jpg" alt="Managing Director">
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="images/team/martin.jpg" alt="Martin Agbodzie">
+      <span class="role">Managing Director (CEO)</span>
       <h3>Martin Agbodzie</h3>
-      <p><strong>Founder & Managing Director</strong></p>
       <p>
-        Agricultural Engineer with extensive experience in climate-smart farming, irrigation, and youth agribusiness development.
+        Agricultural Engineer with over 15 years’ experience in commercial farming
+        and agricultural consultancy.
       </p>
     </div>
 
-    <div class="card team-card">
-      <img src="images/team2.jpg" alt="Operations Lead">
-      <h3>Operations Lead</h3>
-      <p><strong>Farm & Programs Management</strong></p>
+    <div class="team-card">
+      <img src="images/team/maribel.jpg" alt="Maribel Portia Blankson">
+      <span class="role">Community & Sustainability Officer</span>
+      <h3>Maribel Portia Blankson</h3>
       <p>
-        Oversees production systems, training programs, and field operations.
+        Holds a first degree in General Agriculture with a focus on community engagement
+        and sustainability.
       </p>
     </div>
 
-    <div class="card team-card">
-      <img src="images/team3.jpg" alt="Community Coordinator">
-      <h3>Community Coordinator</h3>
-      <p><strong>Youth & Women Programs</strong></p>
+    <div class="team-card">
+      <img src="images/team/linda.jpg" alt="Linda Boamah">
+      <span class="role">Cooperative Development & Training Coordinator</span>
+      <h3>Linda Boamah</h3>
       <p>
-        Leads Agrisisters and cooperative farming initiatives at the community level.
+        Over 10 years’ experience delivering training services to small-scale vegetable farmers.
       </p>
     </div>
+
+    <div class="team-card">
+      <img src="images/team/shine.jpg" alt="Shine Kelly Mensah">
+      <span class="role">General Manager</span>
+      <h3>Shine Kelly Mensah</h3>
+      <p>
+        Over 10 years’ experience in crop farming and farm management.
+      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/team/beatrice.jpg" alt="Beatrice Amponsah">
+      <span class="role">Marketing & Sales Manager</span>
+      <h3>Beatrice Amponsah</h3>
+      <p>
+        Sales and marketing professional with over 10 years’ experience.
+      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/team/sandra.jpg" alt="Sandra Appiah">
+      <span class="role">HR & Procurement Officer</span>
+      <h3>Sandra Appiah</h3>
+      <p>
+        Holds a certificate in General Agriculture and manages human resources
+        and procurement operations.
+      </p>
+    </div>
+
   </div>
 </section>
 
