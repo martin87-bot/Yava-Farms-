@@ -13,95 +13,170 @@
       color: #222;
     }
 
-   /* Navigation */
-.top-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    /* ================= NAVIGATION ================= */
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.nav-container {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-}
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      position: relative;
+    }
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.logo img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-}
+    .logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
 
-.logo span {
-  font-weight: bold;
-  color: #2e7d32;
-  font-size: 1.1rem;
-}
+    .logo span {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2e7d32;
+    }
 
-/* Nav Links */
-.nav-links a {
-  text-decoration: none;
-  color: #2e7d32;
-  font-weight: bold;
-  margin-left: 15px;
-}
+    /* Desktop Links */
+    .nav-links a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: bold;
+      margin-left: 18px;
+    }
 
-/* Mobile Menu */
-#menu-toggle {
-  display: none;
-}
+    /* Mobile toggle */
+    #menu-toggle {
+      display: none;
+    }
 
-.menu-icon {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #2e7d32;
-}
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #2e7d32;
+      user-select: none;
+    }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
+    /* ================= HEADER ================= */
+    header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 65px;
-    right: 20px;
-    background: #ffffff;
-    flex-direction: column;
-    width: 220px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  }
+    header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
 
-  .nav-links a {
-    margin: 10px 0;
-  }
+    /* ================= CONTENT ================= */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-  #menu-toggle:checked + .menu-icon + .nav-links {
-    display: flex;
-  }
-} 
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #f7f7f7;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2e7d32;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 6px 6px 0 0;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    /* ================= MOBILE + ANIMATION ================= */
+    @media (max-width: 768px) {
+
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 20px;
+        background: #ffffff;
+        width: 220px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+        /* Animation setup */
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+        pointer-events: none;
+
+        transition: 
+          opacity 0.3s ease,
+          transform 0.35s ease;
+        
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+      }
+
+      /* Animated open */
+      #menu-toggle:checked + .menu-icon + .nav-links {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
-<nav class="top-nav">
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
   <div class="nav-container">
 
     <!-- Logo -->
@@ -114,7 +189,7 @@
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">☰</label>
 
-    <!-- Navigation Links -->
+    <!-- Navigation -->
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
@@ -127,126 +202,21 @@
   </div>
 </nav>
 
-<!-- Header -->
+<!-- ================= HEADER ================= -->
 <header>
   <h1>Agrisisters Initiative</h1>
   <p>Empowering women through climate-smart agriculture</p>
 </header>
 
-<!-- Overview -->
 <section>
   <h2>Overview</h2>
   <p>
-    The Agrisisters Initiative is a flagship women-led program of Yava Farms and Agricultural Consultancy. It empowers rural women with access to land, climate-smart farming skills, modern inputs, and structured markets.
-  </p>
-  <p>
-    Agrisisters responds directly to the intersecting challenges of climate change, rural poverty, and gender inequality in agriculture.
+    The Agrisisters Initiative is a flagship women-led program of Yava Farms and Agricultural Consultancy.
+    It empowers rural women with access to land, climate-smart farming skills, modern inputs, and structured markets.
   </p>
 </section>
 
-<!-- Why Agrisisters -->
-<section>
-  <h2>Why Agrisisters?</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Women at the Center</h3>
-      <p>Women form the backbone of Ghana’s food system yet face systemic barriers. Agrisisters puts women first.</p>
-    </div>
-    <div class="card">
-      <h3>Climate-Smart Farming</h3>
-      <p>Training in sustainable practices that increase yields while protecting soil and water resources.</p>
-    </div>
-    <div class="card">
-      <h3>Income & Dignity</h3>
-      <p>Reliable incomes, improved household food security, and economic independence for women.</p>
-    </div>
-  </div>
-</section>
-
-<!-- What We Do -->
-<section>
-  <h2>What We Do</h2>
-  <ul>
-    <li>Provide access to land through cooperative arrangements</li>
-    <li>Hands-on training in crop production and agribusiness</li>
-    <li>Supply quality seeds, inputs, and irrigation support</li>
-    <li>Guarantee market access through offtake partnerships</li>
-    <li>Promote savings, reinvestment, and cooperative growth</li>
-  </ul>
-</section>
-
-<!-- Impact Goals -->
-<section>
-  <h2>Impact Goals</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Women Empowered</h3>
-      <p>Support hundreds of rural women to become successful climate-smart farmers.</p>
-    </div>
-    <div class="card">
-      <h3>Food Security</h3>
-      <p>Increase availability of nutritious, locally produced food in rural and urban markets.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Support -->
-<section>
-  <h2>Support Our Work</h2>
-  <p>
-    Your support helps scale climate-smart agriculture, empower women, restore land, and strengthen food security.
-  </p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Sponsor a Climate-Smart Farm</h3>
-      <p>Support women- and youth-led farms through inputs, irrigation, and technical training.</p>
-    </div>
-    <div class="card">
-      <h3>Support Agrisisters</h3>
-      <p>Fund land preparation, seeds, training, and guaranteed market access.</p>
-    </div>
-  </div>
-
-  <p style="margin-top:25px;">
-    <strong>Interested in sponsoring or donating?</strong>
-  </p>
-
-  <a href="Art_That_Feeds_Communities_Donor_Brief.pdf" class="btn">Download Donor Brief (PDF)</a>
-  <a href="Yava_Farms_Pitch_Deck.pdf" class="btn">Download Pitch Deck</a>
-  <a href="mailto:info@yavafarms.com" class="btn">Become a Partner</a>
-</section>
-
-<!-- Contributions -->
-<section>
-  <h2>Make a Contribution</h2>
-  <div class="grid">
-    <div class="card">
-      <h4>🏦 Bank Transfer</h4>
-      <p><strong>Bank:</strong> National Investment Bank</p>
-      <p><strong>Account Name:</strong> Yava Farms & Agricultural Consultancy</p>
-      <p><strong>Account Number:</strong> 1124092119501</p>
-      <p><strong>Branch:</strong> Wenchi</p>
-    </div>
-
-    <div class="card">
-      <h4>🌍 International Partners</h4>
-      <p>For grants, international transfers, or structured funding, contact us directly.</p>
-      <a href="mailto:info@yavafarms.com" class="btn">Request Payment Details</a>
-    </div>
-  </div>
-</section>
-
-<!-- Partner -->
-<section>
-  <h2>Partner With Agrisisters</h2>
-  <p>
-    We welcome partnerships with donors, foundations, CSR programs, and development agencies seeking high-impact, gender-responsive climate solutions.
-  </p>
-  <a href="mailto:info@yavafarms.com" class="btn">Contact Us</a>
-</section>
-
-<!-- Footer -->
+<!-- ================= FOOTER ================= -->
 <footer>
   <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
 </footer>
