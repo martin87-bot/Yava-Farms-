@@ -297,6 +297,15 @@
   height: 90px;
   margin-bottom: 15px;
 }    
+    /* Smooth Page Transition */
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
   </style>
 </head>
 
@@ -535,5 +544,28 @@
 
   typeText();
 </script>
+  <script>
+  // Fade in when page loads
+  window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+  });
+
+  // Fade out when clicking links
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      // Only apply to internal links
+      if (href && !href.startsWith("#") && !href.startsWith("mailto") && !href.startsWith("tel")) {
+        e.preventDefault();
+        document.body.classList.remove("page-loaded");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 600);
+      }
+    });
+  });
+  </script>
 </body>
 </html>
