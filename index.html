@@ -340,6 +340,8 @@ body.page-loaded {
   100% {
     transform: rotate(360deg);
   }
+}
+
 :root {
   --brand-orange: #f57c00;
 }
@@ -360,14 +362,6 @@ body.page-loaded {
   color: #666;
   font-size: 16px;
   margin-bottom: 60px;
-}
-
-.achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 50px;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .achievement-item {
@@ -440,12 +434,6 @@ body.page-loaded {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-
-/* Bigger, bolder numbers */
-.achievement-item h3 {
-  font-size: 56px;
-  font-weight: 900;
 }
 
 /* Smaller description text */
@@ -600,6 +588,12 @@ body.page-loaded {
     Your browser does not support video.
   </video>
   </section>
+  
+  <section class="key-achievements">
+  <h2>Key Achievements</h2>
+  <p class="subtitle">Our impact so far</p>
+
+  <div class="achievements-grid custom-layout">
   <section class="key-achievements">
   <div class="achievements-grid custom-layout">
 
