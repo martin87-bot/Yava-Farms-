@@ -463,6 +463,53 @@ body.page-loaded {
     grid-template-columns: 1fr;
   }
 }
+    /* Subtle wave background for achievements section */
+.key-achievements {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Decorative wave */
+.key-achievements::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: -20%;
+  width: 140%;
+  height: 300px;
+  background: radial-gradient(
+    circle at center,
+    rgba(245, 124, 0, 0.15),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+/* Keep content above wave */
+.key-achievements > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Achievement card default */
+.achievement-item {
+  background: #ffffff;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+/* Active (tap ON) */
+.achievement-item.active {
+  background: var(--brand-orange);
+  transform: translateY(-8px);
+}
+
+/* White text when active */
+.achievement-item.active h3,
+.achievement-item.active p {
+  color: #ffffff;
+}
   </style>
 </head>
 
@@ -795,9 +842,15 @@ body.page-loaded {
   });
   </script>
   <script>
-  const items = document.querySelectorAll('.achievement-item');
-  const counters = document.querySelectorAll('.count');
+  const achievementItems = document.querySelectorAll('.achievement-item');
 
+  achievementItems.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active'); // tap ON / tap OFF
+    });
+  });
+</script>  
+  <script>
   // Scroll animation
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
