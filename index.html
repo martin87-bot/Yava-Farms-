@@ -436,6 +436,7 @@ body.page-loaded {
 /* =====================
    KEY ACHIEVEMENTS
 ===================== */
+
 .key-achievements {
   text-align: center;
   padding: 90px 20px;
@@ -476,14 +477,14 @@ body.page-loaded {
 }
 
 .achievement-item {
-  background: #fff;
+  background: #ffffff;
   padding: 40px 25px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.08);
   cursor: pointer;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .achievement-item.show {
@@ -498,7 +499,7 @@ body.page-loaded {
 
 .achievement-item.active h3,
 .achievement-item.active p {
-  color: #fff;
+  color: #ffffff;
 }
 
 .achievement-item h3 {
@@ -507,6 +508,7 @@ body.page-loaded {
 }
 
 .achievement-item p {
+  font-size: 16px;
   color: #555;
 }
 }    
@@ -805,7 +807,49 @@ this.style.display = 'none';
     });    
   }, { threshold: 0.4 });    
     
-  items.forEach(item => observer.observe(item));    
+   <script>
+  const items = document.querySelectorAll('.achievement-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        startCount(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  items.forEach(item => observer.observe(item));
+
+  function startCount(element) {
+    const counter = element.querySelector('.count');
+    if (!counter || counter.classList.contains('counted')) return;
+
+    const target = +counter.dataset.target;
+    let current = 0;
+    const increment = Math.ceil(target / 50);
+
+    const update = () => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = target + "+";
+        counter.classList.add('counted');
+      } else {
+        counter.textContent = current;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+  }
+
+  // Tap ON / OFF orange background
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>  
+    <script>
     
   // Count-up animation    
   function startCount(element) {    
