@@ -406,6 +406,9 @@ body.page-loaded {
   max-width: 260px;
   margin: auto;
 }
+    .achievement-item {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
 
 /* Scroll animation */
 .left {
@@ -429,6 +432,11 @@ body.page-loaded {
   justify-content: center;
   text-align: center;
 }
+    .achievements-grid {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+    }
 
 .achievement-column {
   display: flex;
@@ -594,23 +602,34 @@ body.page-loaded {
   <p class="subtitle">Our impact so far</p>
 
   <div class="achievements-grid custom-layout">
-  <section class="key-achievements">
-  <div class="achievements-grid custom-layout">
 
-  <!-- Left column -->
-  <div class="achievement-column">
+    <!-- Left column -->
+    <div class="achievement-column">
 
-    <div class="achievement-item left">
-      <h3 class="count" data-target="100">0</h3>
-      <p>No. of women in our fresh produce supply chain</p>
+      <div class="achievement-item left">
+        <h3 class="count" data-target="100">0</h3>
+        <p>No. of women in our fresh produce supply chain</p>
+      </div>
+
+      <div class="achievement-item left">
+        <h3 class="count" data-target="50">0</h3>
+        <p>Jobs created</p>
+      </div>
+
     </div>
 
-    <div class="achievement-item left">
-      <h3 class="count" data-target="50">0</h3>
-      <p>Jobs created</p>
+    <!-- Right column -->
+    <div class="achievement-column">
+
+      <div class="achievement-item right">
+        <h3 class="count" data-target="100">0</h3>
+        <p>No. of women and youth trained</p>
+      </div>
+
     </div>
 
   </div>
+</section>
 
   <!-- Right column -->
   <div class="achievement-column">
