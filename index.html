@@ -432,7 +432,9 @@ body.page-loaded {
     .achievements-grid {    
   width: 100%;    
   max-width: 900px;    
-  margin: auto;    
+  margin: auto; 
+}
+    
 /* =====================
    KEY ACHIEVEMENTS
 ===================== */
@@ -788,7 +790,8 @@ this.style.display = 'none';
       }    
     });    
   });    
-  </script>      <script>    
+  </script>    
+    <script>    
   const achievementItems = document.querySelectorAll('.achievement-item');    
     
   achievementItems.forEach(item => {    
@@ -796,7 +799,8 @@ this.style.display = 'none';
       item.classList.toggle('active'); // tap ON / tap OFF    
     });    
   });    
-</script>        <script>    
+</script>        
+    <script>    
   // Scroll animation    
   const observer = new IntersectionObserver(entries => {    
     entries.forEach(entry => {    
