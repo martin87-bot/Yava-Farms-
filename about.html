@@ -319,6 +319,73 @@
 .team-card:active {
   transform: scale(0.97);
 }
+    /* =========================
+   TEAM CARD ADVANCED EFFECTS
+========================= */
+
+.team-card {
+  background: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease,
+    transform 0.8s ease,
+    opacity 0.8s ease,
+    box-shadow 0.45s ease;
+}
+
+/* Orange active state */
+.team-card.active {
+  background: #f57c00;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(245,124,0,0.45);
+}
+
+.team-card.active h3,
+.team-card.active p,
+.team-card.active .role {
+  color: #ffffff;
+}
+
+.team-card.active .role {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Image zoom on active */
+.team-card img {
+  transition: transform 0.45s ease;
+}
+
+.team-card.active img {
+  transform: scale(1.08);
+}
+
+/* Scroll entrance directions */
+.team-card.from-left {
+  transform: translateX(-90px);
+}
+
+.team-card.from-right {
+  transform: translateX(90px);
+}
+
+/* When visible */
+.team-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Keyboard focus */
+.team-card:focus {
+  outline: 3px solid rgba(245,124,0,0.6);
+  outline-offset: 4px;
+}
   </style>
 </head>
 
@@ -540,5 +607,59 @@ document.addEventListener("DOMContentLoaded", () => {
   teamCards.forEach(card => observer.observe(card));
 });
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".team-card");
+
+  /* Accessibility setup */
+  cards.forEach((card, index) => {
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-pressed", "false");
+
+    /* Alternate slide direction */
+    card.classList.add(index % 2 === 0 ? "from-left" : "from-right");
+
+    /* Toggle logic (only one active) */
+    const activateCard = () => {
+      cards.forEach(c => {
+        c.classList.remove("active");
+        c.setAttribute("aria-pressed", "false");
+      });
+
+      card.classList.add("active");
+      card.setAttribute("aria-pressed", "true");
+    };
+
+    /* Click (mobile + desktop) */
+    card.addEventListener("click", activateCard);
+
+    /* Keyboard support */
+    card.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activateCard();
+      }
+    });
+  });
+
+  /* Scroll animation with stagger */
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = [...cards].indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add("show");
+          }, index * 120); // stagger delay
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
 </body>
 </html>
