@@ -340,6 +340,91 @@ body.page-loaded {
   100% {
     transform: rotate(360deg);
   }
+:root {
+  --brand-orange: #f57c00;
+}
+
+.key-achievements {
+  padding: 90px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.key-achievements h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 50px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.achievement-item {
+  padding: 40px 25px;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.achievement-item:hover,
+.achievement-item.active {
+  background: var(--brand-orange);
+  transform: translateY(-8px);
+}
+
+.achievement-item:hover h3,
+.achievement-item:hover p,
+.achievement-item.active h3,
+.achievement-item.active p,
+.achievement-item.active .icon {
+  color: #fff;
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  transition: color 0.4s ease;
+}
+
+.achievement-item h3 {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.achievement-item p {
+  font-size: 16px;
+  color: #555;
+  max-width: 260px;
+  margin: auto;
+}
+
+/* Scroll animation */
+.left {
+  transform: translateX(-60px);
+}
+
+.right {
+  transform: translateX(60px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
 }
   </style>
 </head>
@@ -474,6 +559,36 @@ body.page-loaded {
     Your browser does not support video.
   </video>
   </section>
+  <section class="key-achievements">
+  <div class="container">
+    <h2>Key Achievements</h2>
+    <p class="subtitle">
+      These are some of our milestone achievement metrics
+    </p>
+
+    <div class="achievements-grid">
+
+      <div class="achievement-item left">
+        <div class="icon">👩🏽‍🌾</div>
+        <h3 class="count" data-target="100">0</h3>
+        <p>No. of Women in Our Fresh Produce Supply Chain</p>
+      </div>
+
+      <div class="achievement-item right">
+        <div class="icon">🎓</div>
+        <h3 class="count" data-target="100">0</h3>
+        <p>No. of Women and Youth Trained</p>
+      </div>
+
+      <div class="achievement-item left">
+        <div class="icon">💼</div>
+        <h3 class="count" data-target="50">0</h3>
+        <p>Jobs Created</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Visit Us -->
 <section id="visit">
@@ -634,6 +749,51 @@ body.page-loaded {
           window.location.href = href;
         }, 400);
       }
+    });
+  });
+  </script>
+  <script>
+  const items = document.querySelectorAll('.achievement-item');
+  const counters = document.querySelectorAll('.count');
+
+  // Scroll animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        startCount(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  items.forEach(item => observer.observe(item));
+
+  // Count-up animation
+  function startCount(element) {
+    const counter = element.querySelector('.count');
+    if (!counter || counter.classList.contains('counted')) return;
+
+    const target = +counter.getAttribute('data-target');
+    let current = 0;
+    const increment = Math.ceil(target / 50);
+
+    const update = () => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = target + "+";
+        counter.classList.add('counted');
+      } else {
+        counter.textContent = current;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+  }
+
+  // Tap to toggle orange background (mobile + desktop)
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
     });
   });
   </script>
