@@ -265,6 +265,60 @@
 .core-values.active .card:hover {
   transform: translateY(-6px);
 } 
+    /* ===== TEAM CARD INTERACTIONS ===== */
+
+.team-card {
+  background: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+  cursor: pointer;
+
+  /* Animation defaults */
+  opacity: 0;
+  transform: translateX(0);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+/* Orange toggle on tap */
+.team-card.active {
+  background: #f57c00; /* strong professional orange */
+  color: #ffffff;
+}
+
+.team-card.active h3,
+.team-card.active p,
+.team-card.active .role {
+  color: #ffffff;
+}
+
+.team-card.active .role {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Scroll entrance positions */
+.team-card.from-left {
+  transform: translateX(-80px);
+}
+
+.team-card.from-right {
+  transform: translateX(80px);
+}
+
+/* When card becomes visible */
+.team-card.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile tap feedback */
+.team-card:active {
+  transform: scale(0.97);
+}
   </style>
 </head>
 
@@ -457,5 +511,34 @@ const observer = new IntersectionObserver(
 
 observer.observe(coreValuesSection);
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const teamCards = document.querySelectorAll(".team-card");
+
+  /* Alternate left / right entrance */
+  teamCards.forEach((card, index) => {
+    card.classList.add(index % 2 === 0 ? "from-left" : "from-right");
+
+    /* Toggle orange background on tap */
+    card.addEventListener("click", () => {
+      card.classList.toggle("active");
+    });
+  });
+
+  /* Scroll animation observer */
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  teamCards.forEach(card => observer.observe(card));
+});
+  </script>
 </body>
 </html>
