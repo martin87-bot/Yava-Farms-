@@ -500,6 +500,14 @@ body.page-loaded {
 .achievement-item.active p {
   color: #fff;
 }
+    .achievement-item.auto-active {
+  background: var(--brand-orange);
+}
+
+.achievement-item.auto-active h3,
+.achievement-item.auto-active p {
+  color: #fff;
+}
 
   </style>    </head>    <body>    
 <!-- Page Loader -->    
@@ -628,6 +636,40 @@ body.page-loaded {
     </div>
   </div>
 </section>
+  <script>
+  let autoIndex = 0;
+  let autoInterval = null;
+
+  function startAutoHighlight() {
+    if (autoInterval) return;
+
+    autoInterval = setInterval(() => {
+      items.forEach(i => i.classList.remove('auto-active'));
+      items[autoIndex].classList.add('auto-active');
+      autoIndex = (autoIndex + 1) % items.length;
+    }, 2500);
+  }
+
+  function stopAutoHighlight() {
+    clearInterval(autoInterval);
+    autoInterval = null;
+    items.forEach(i => i.classList.remove('auto-active'));
+  }
+
+  const achievementsSection = document.querySelector('.key-achievements');
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startAutoHighlight();
+      } else {
+        stopAutoHighlight();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sectionObserver.observe(achievementsSection);
+    </script>
 
 </section>    <!-- Visit Us -->    <section id="visit">    
   <h2>Visit Us</h2>    
