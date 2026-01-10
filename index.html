@@ -508,8 +508,32 @@ body.page-loaded {
 .achievement-item.auto-active p {
   color: #fff;
 }
+    .footer-socials {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
 
-  </style>    </head>    <body>    
+.footer-socials a {
+  width: 45px;
+  height: 45px;
+  background: #1b5e20;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: var(--brand-orange);
+  transform: translateY(-4px);
+}
+
+  </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
   <div class="spinner"></div>    
@@ -686,9 +710,19 @@ body.page-loaded {
     📍 Wenchi, Bono Region, Ghana<br>    
   </p>    <a href="mailto:info@yavafarms.com" class="btn">Contact Yava Farms</a>
 
-</section>    <!-- Footer -->    <footer>    
-  <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Ghana</p>    
-</footer>    
+</section>    <!-- Footer -->    <footer>
+  <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Ghana</p>
+
+  <div class="footer-socials">
+    <a href="https://wa.me/233204927275" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.facebook.com/YavaFarms" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+</footer>
 <!-- Floating Contact Buttons -->    
 <div class="floating-cta">    
   <a href="https://wa.me/233204927275" target="_blank" class="whatsapp">    
