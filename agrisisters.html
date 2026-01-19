@@ -64,25 +64,21 @@ nav{
   cursor:pointer;
   color:#2e7d32;
 }
-
 /* HERO HEADER */
-#hero-header {
-  position: relative;
-  height: 90vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 1.5s ease-in-out;
-}
-
-/* Dark overlay for text readability */
 #hero-header {
   position: relative;
   height: 90vh;
   background: url("images/header1as.jpg") center/cover no-repeat;
   transition: background-image 1.5s ease-in-out;
 }
-}
+  .hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  }
 
 .hero-content {
   color: #ffffff;
@@ -409,12 +405,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load first image immediately
   changeBackground();
 
-  // Rotate every 15 minutes
+  // Rotate every 15 minutes (test with 5000 if needed)
   setInterval(changeBackground, 900000);
 });
 </script>
 
-
-  </script>
 </body>
 </html>
