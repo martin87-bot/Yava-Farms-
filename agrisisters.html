@@ -210,6 +210,84 @@ footer{
 
   .hero-content h1 {
     font-size: 1.6rem;
+}
+    /* HERO HEADER */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-slides {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* HERO TEXT */
+.hero-content {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  max-width: 600px;
+  color: white;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+/* TEXT ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-content {
+    left: 5%;
+    right: 5%;
+    bottom: 15%;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
   }
 }
 </style>
@@ -242,13 +320,28 @@ footer{
 </nav>
 
 <!-- HEADER -->
-<header id="hero-header">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Yava Farms & Agricultural Consultancy</h1>
-      <p>Empowering youth and women through sustainable agriculture</p>
-
+<header class="hero">
+  <div class="hero-slides">
+    <div class="slide active" style="background-image: url('images/hero1.jpg');">
+      <div class="hero-content">
+        <h1>Yava Farms & Agricultural Consultancy</h1>
+        <p>Building climate-smart agriculture and empowering youth and women</p>
       </div>
+    </div>
+
+    <div class="slide" style="background-image: url('images/hero2.jpg');">
+      <div class="hero-content">
+        <h1>Growing Sustainable Food Systems</h1>
+        <p>From greenhouse innovation to rural livelihoods</p>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('images/hero3.jpg');">
+      <div class="hero-content">
+        <h1>Impact Beyond Farming</h1>
+        <p>Training, jobs, and inclusive agribusiness value chains</p>
+      </div>
+    </div>
   </div>
 </header>
   
@@ -408,6 +501,20 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(changeBackground, 5000);
 });
 </script>
+<script>
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+  const slideInterval = 5000; // 15 minutes (5,000 ms)
 
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, slideInterval);
+</script>
 </body>
 </html>
