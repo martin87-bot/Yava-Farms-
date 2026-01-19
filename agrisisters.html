@@ -6,14 +6,17 @@
 <title>Agrisisters Initiative | Yava Farms</title>
 
 <style>
+/* ================= GLOBAL ================= */
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
-  line-height:1.6;
   color:#222;
+  line-height:1.6;
 }
 
-/* ========== NAVIGATION ========== */
+a{text-decoration:none}
+
+/* ================= NAVIGATION ================= */
 nav{
   background:#fff;
   border-bottom:1px solid #e0e0e0;
@@ -37,159 +40,29 @@ nav{
   gap:10px;
 }
 
-.logo img{
-  height:40px;
-  width:auto;
-  object-fit:contain;
-}
+.logo img{height:40px}
 
 .logo span{
   font-weight:bold;
   color:#2e7d32;
-  font-size:1.1rem;
 }
 
 .nav-links a{
-  text-decoration:none;
   color:#2e7d32;
   font-weight:bold;
   margin-left:18px;
 }
 
-#menu-toggle{display:none;}
-
+#menu-toggle{display:none}
 .menu-icon{
   display:none;
   font-size:28px;
   cursor:pointer;
   color:#2e7d32;
 }
-/* ========== HERO HEADER ========== */
-.hero {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
-}
 
-.hero-slides {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1.1);
-  transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 1;
-}
-
-.hero-content {
-  position: absolute;
-  bottom: 22%;
-  left: 8%;
-  max-width: 620px;
-  color: #ffffff;
-  animation: fadeUp 1.5s ease forwards;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-/* TEXT ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* MOBILE HERO */
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh;
-  }
-
-  .hero-content {
-    left: 6%;
-    right: 6%;
-    bottom: 18%;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-}
-
-/* ========== CONTENT ========== */
-section{
-  padding:50px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-h2{color:#2e7d32;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:#f7f7f7;
-  padding:25px;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.05);
-}
-
-.btn{
-  display:inline-block;
-  background:#2e7d32;
-  color:#fff;
-  padding:12px 22px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  margin:6px 6px 0 0;
-}
-
-/* ========== FOOTER ========== */
-footer{
-  background:#111;
-  color:#ccc;
-  text-align:center;
-  padding:25px 15px;
-}
-
-/* ========== MOBILE NAV ========== */
 @media(max-width:768px){
-  .menu-icon{display:block;}
-
+  .menu-icon{display:block}
   .nav-links{
     display:none;
     flex-direction:column;
@@ -202,316 +75,350 @@ footer{
     border-radius:10px;
     box-shadow:0 4px 15px rgba(0,0,0,0.15);
   }
-
-  .nav-links a{margin:10px 0;}
-
   #menu-toggle:checked + .menu-icon + .nav-links{
     display:flex;
   }
-}
-  /* Agrisisters Gallery */
-.gallery-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
+  .nav-links a{margin:10px 0}
 }
 
-.gallery-intro {
-  max-width: 650px;
-  margin: 0 auto 40px;
-  color: #555;
+/* ================= HERO SLIDER ================= */
+.hero{
+  position:relative;
+  height:90vh;
+  overflow:hidden;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+.hero-slides{
+  position:absolute;
+  inset:0;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+.slide{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 1.5s ease;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+.slide.active{opacity:1}
+
+/* Dark gradient overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)
+  );
+  z-index:1;
 }
 
-    /* HERO HEADER */
-.hero {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
+/* Hero text */
+.hero-content{
+  position:absolute;
+  z-index:2;
+  bottom:22%;
+  left:8%;
+  max-width:620px;
+  color:#fff;
+  animation:fadeUp 1.2s ease forwards;
 }
 
-.hero-slides {
-  height: 100%;
-  width: 100%;
-  position: relative;
+.hero-content h1{
+  font-size:3rem;
+  margin-bottom:10px;
 }
 
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transform: scale(1.1);
-  transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
+.hero-content p{
+  font-size:1.2rem;
 }
 
-.slide.active {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 1;
+.btn-primary{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 28px;
+  background:#f7931e;
+  color:#fff;
+  border-radius:6px;
+  font-weight:bold;
 }
 
-/* HERO TEXT */
-.hero-content {
-  position: absolute;
-  bottom: 20%;
-  left: 8%;
-  max-width: 600px;
-  color: white;
-  animation: fadeUp 1.5s ease forwards;
+.btn-primary:hover{
+  background:#e67e00;
 }
 
-/* TEXT ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* Slide dots */
+.dots{
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  z-index:3;
+}
+
+.dot{
+  width:12px;
+  height:12px;
+  background:#fff;
+  opacity:0.5;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.dot.active{opacity:1}
+
+/* Animations */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Mobile hero */
+@media(max-width:768px){
+  .hero{height:70vh}
+  .hero-content{
+    left:6%;
+    right:6%;
+    bottom:18%;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .hero-content h1{font-size:2rem}
 }
 
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh;
-  }
+/* ================= CONTENT ================= */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-  .hero-content {
-    left: 5%;
-    right: 5%;
-    bottom: 15%;
-  }
+h2{color:#2e7d32}
 
-  .hero-content h1 {
-    font-size: 2rem;
-  }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
 
-  .hero-content p {
-    font-size: 1rem;
-  }
+.card{
+  background:#f7f7f7;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ================= GALLERY ================= */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:25px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
-<div class="nav-container">
-
-<div class="logo">
-  <img src="images/logo.jpg" alt="Yava Farms Logo">
-  <span>Yava Farms</span>
-</div>
-
-<input type="checkbox" id="menu-toggle">
-<label for="menu-toggle" class="menu-icon">☰</label>
-
-<div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="agrisisters.html">Agrisisters</a>
-  <a href="art_that_feeds_communities.html">Art Project</a>
-  <a href="#visit">Visit Us</a>
-  <a href="mailto:info@yavafarms.com">Contact</a>
-</div>
-
-</div>
-</nav>
-
-<!-- HEADER -->
-<header class="hero agrisisters-hero">
-  <div class="hero-slides">
-    <div class="slide active" style="background-image: url('images/hero/agrisistersheader1.jpg');">
-      <div class="hero-content">
-        <h1>Agrisisters Initiative</h1>
-        <p>Empowering women farmers through climate-smart agriculture</p>
-      </div>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Yava Farms">
+      <span>Yava Farms</span>
     </div>
-
-    <div class="slide" style="background-image: url('images/hero/agrisistersheader22.jpg');">
-      <div class="hero-content">
-        <h1>Women Leading Change</h1>
-        <p>Skills, land access, and guaranteed markets</p>
-      </div>
-    </div>
-
-    <div class="slide" style="background-image: url('images/hero/agrisistersheader3.jpg');">
-      <div class="hero-content">
-        <h1>From Training to Income</h1>
-        <p>Building dignified rural livelihoods</p>
-      </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="agrisisters.html">Agrisisters</a>
+      <a href="art_that_feeds_communities.html">Art Project</a>
+      <a href="#visit">Visit Us</a>
+      <a href="mailto:info@yavafarms.com">Contact</a>
     </div>
   </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="hero-slides">
+    <div class="slide active" style="background-image:url('images/hero/agrisistersheader1.jpg')"></div>
+    <div class="slide" style="background-image:url('images/hero/agrisistersheader2.jpg')"></div>
+    <div class="slide" style="background-image:url('images/hero/agrisistersheader3.jpg')"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1>Agrisisters Initiative</h1>
+    <p>Empowering women farmers through climate-smart agriculture</p>
+    <a href="#support" class="btn-primary">Support Agrisisters</a>
+  </div>
+
+  <div class="dots"></div>
 </header>
-  
-<!-- OVERVIEW -->
-<section>
-<h2>Overview</h2>
-<p>
-Young women in rural Ghana face persistent structural barriers to dignified work in agriculture, including limited access to land, finance, and productive assets, even after acquiring relevant skills. While Yava Farms has invested in climate-smart irrigation and built a pipeline of skilled young women trainees, both physical infrastructure and human capital remain underutilized due to gaps in inclusive financing and market-linked production models. Addressing these systemic constraints is critical to enabling youth-led agribusinesses, improving productivity, and driving sustainable, inclusive economic transformation.
-This challenge presents a unique opportunity to simultaneously unlock underutilized agricultural infrastructure and empower skilled young women with pathways to dignified, income-generating work. By intentionally connecting trained female youth to irrigated land, inputs, mentorship, and guaranteed markets, Yava Farms can transform existing constraints into a scalable, inclusive agribusiness model. The AgriSisters Program is designed to address this gap by aligning assets, skills, and markets to create sustainable women-led agribusiness enterprises.
-</p>
-<p>
-Agrisisters responds directly to climate change, youth unemployment, rural poverty, and gender inequality in agriculture.
-</p>
-</section>
 
-<!-- WHY -->
-<section>
-<h2>Why Agrisisters?</h2>
-<div class="grid">
-<div class="card">
-<h3>Women at the Center</h3>
-<p>Women form the backbone of Ghana’s food system yet face systemic barriers.</p>
-</div>
-<div class="card">
-<h3>Climate-Smart Farming</h3>
-<p>Sustainable practices that increase yields while protecting resources.</p>
-</div>
-<div class="card">
-<h3>Income & Dignity</h3>
-<p>Reliable incomes and economic independence for women.</p>
-</div>
-</div>
-</section>
+  <section id="overview">
+  <h2>Overview</h2>
+  <p>
+    Young women in rural Ghana face persistent structural barriers to dignified work
+    in agriculture, including limited access to land, finance, and productive assets.
+  </p>
+  <p>
+    The AgriSisters Program connects trained women to irrigated land, inputs,
+    mentorship, and guaranteed markets to build sustainable livelihoods.
+  </p>
+  </section>
 
-<!-- WHAT WE DO -->
-<section>
-<h2>What We Do</h2>
-<ul>
-<li>Access to land through cooperatives</li>
-<li>Hands-on training in farming & agribusiness</li>
-<li>Supply of seeds, inputs & irrigation</li>
-<li>Guaranteed markets via offtake partnerships</li>
-<li>Savings & cooperative growth models</li>
-</ul>
-</section>
+  <section id="why">
+  <h2>Why Agrisisters?</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Women at the Center</h3>
+      <p>Women are the backbone of Ghana’s food system.</p>
+    </div>
+    <div class="card">
+      <h3>Climate-Smart Farming</h3>
+      <p>Efficient water use, improved yields, and resilience.</p>
+    </div>
+    <div class="card">
+      <h3>Income & Dignity</h3>
+      <p>Reliable income and economic independence.</p>
+    </div>
+  </div>
+  </section>
 
-<!-- IMPACT -->
-<section>
-<h2>Impact Goals</h2>
-<div class="grid">
-<div class="card">
-<h3>Women Empowered</h3>
-<p>Support hundreds of rural women farmers.</p>
-</div>
-<div class="card">
-<h3>Food Security</h3>
-<p>Increase nutritious local food supply.</p>
-</div>
-</div>
-</section>
-  <!-- Agrisisters Photo Gallery -->
-<section class="gallery-section">
+  <section id="what-we-do">
+  <h2>What We Do</h2>
+  <ul>
+    <li>Access to irrigated land</li>
+    <li>Hands-on training & mentorship</li>
+    <li>Seeds, inputs & irrigation</li>
+    <li>Guaranteed markets</li>
+    <li>Cooperative savings models</li>
+  </ul>
+  </section>
+
+  <section id="impact">
+  <h2>Impact Goals</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>100+ Women Empowered</h3>
+      <p>Income-generating agribusinesses.</p>
+    </div>
+    <div class="card">
+      <h3>Food Security</h3>
+      <p>Nutritious fresh produce for communities.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="gallery-section">
   <h2>Agrisisters in Action</h2>
   <p class="gallery-intro">
-    Real women. Real farms. Real impact through climate-smart agriculture.
+    Real women. Real farms. Real impact.
   </p>
 
   <div class="gallery-grid">
-    <img src="images/agrisisters1.jpg" alt="Agrisisters training session">
-    <img src="images/agrisisters2.jpg" alt="Women farmers in the field">
-    <img src="images/agrisisters3.jpg" alt="Harvesting vegetables">
-    <img src="images/agrisisters4.jpg" alt="Group training and learning">
-    <img src="images/agrisisters5.jpg" alt="Women cooperative farming">
-    <img src="images/agrisisters6.jpg" alt="Fresh produce ready for market">
+    <img src="images/agrisisters1.jpg" alt="">
+    <img src="images/agrisisters2.jpg" alt="">
+    <img src="images/agrisisters3.jpg" alt="">
+    <img src="images/agrisisters4.jpg" alt="">
+    <img src="images/agrisisters5.jpg" alt="">
+    <img src="images/agrisisters6.jpg" alt="">
+  </div>
+  </section>
+<section id="contributions">
+  <h2>Make a Contribution</h2>
+  <div class="grid">
+    <div class="card">
+      <h4>🏦 Bank Transfer</h4>
+      <p><strong>Bank:</strong> National Investment Bank</p>
+      <p><strong>Account Name:</strong> Yava Farms & Agricultural Consultancy</p>
+      <p><strong>Account Number:</strong> 1124092119501</p>
+    </div>
+    <div class="card">
+      <h4>🌍 International Partners</h4>
+      <a href="mailto:yavafarms@gmail.com" class="btn-primary">
+        Request Details
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- SUPPORT -->
-<section>
-<h2>Support Our Work</h2>
-<div class="grid">
-<div class="card">
-<h3>Support Agrisisters</h3>
-<p>Fund field setup, farm tools & equipment, inputs and trainings.</p>
-  <p>
-We welcome partnerships with donors and development agencies.
-  </p>
-</div>
-</div>
-
-<p><strong>Interested in supporting?</strong></p>
-
-<a href="Yava_Farms_Pitch_Deck.pdf" class="btn">
-Download Our Pitch Deck
-</a>
-<a href="mailto:yavafarms@gmail.com" class="btn">
-Become a Partner
-</a>
-</section>
-
-<!-- CONTRIBUTIONS -->
-<section>
-<h2>Make a Contribution</h2>
-<div class="grid">
-<div class="card">
-<h4>🏦 Bank Transfer</h4>
-<p><strong>Bank:</strong> National Investment Bank</p>
-<p><strong>Account Name:</strong> Yava Farms & Agricultural Consultancy</p>
-<p><strong>Account Number:</strong> 1124092119501</p>
-<p><strong>Branch:</strong> Wenchi</p>
-</div>
-
-<div class="card">
-<h4>🌍 International Partners</h4>
-<p>For grants or international transfers, contact us.</p>
-<a href="mailto:yavafarms@gmail.com" class="btn">Request Payment Details</a>
-</div>
-</div>
-</section>
-
-<!-- PARTNER -->
-<section>
-<a href="mailto:yavafarms@gmail.com" class="btn">Contact Us</a>
-</section>
-
-<!-- FOOTER -->
 <footer>
-<p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
+  <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
 </footer>
 
-
 <script>
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-  const slideInterval = 15000; // 15 seconds (15,000 ms)
+/* ===== HERO SLIDER SCRIPT ===== */
+const slides = document.querySelectorAll(".slide");
+const dotsContainer = document.querySelector(".dots");
+const hero = document.getElementById("hero");
+let index = 0;
+let interval;
 
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[index].classList.add("active");
-  }
+/* Create dots */
+slides.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  if(i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => showSlide(i));
+  dotsContainer.appendChild(dot);
+});
 
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }, slideInterval);
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(i){
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+  index = i;
+}
+
+function startSlider(){
+  interval = setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 15000);
+}
+
+function stopSlider(){
+  clearInterval(interval);
+}
+
+/* Auto pause on hover */
+hero.addEventListener("mouseenter", stopSlider);
+hero.addEventListener("mouseleave", startSlider);
+
+/* Swipe support */
+let startX = 0;
+hero.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+hero.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+  if(endX < startX - 50) showSlide((index + 1) % slides.length);
+  if(endX > startX + 50) showSlide((index - 1 + slides.length) % slides.length);
+});
+
+startSlider();
 </script>
+
 </body>
 </html>
