@@ -217,6 +217,13 @@ footer{
     font-size: 1.6rem;
   }
   }
+  #hero-header {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out;
+  }
 </style>
 </head>
 
@@ -411,5 +418,34 @@ We welcome partnerships with donors, CSR programs, and development agencies.
     header.style.backgroundImage = `url(${images[currentImage]})`;
   }, 900000);
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.getElementById("hero-header");
+
+  if (!header) {
+    console.error("Hero header not found");
+    return;
+  }
+
+  const images = [
+    "images/header1.jpg",
+    "images/header2.jpg",
+    "images/header3.jpg"
+  ];
+
+  let index = 0;
+
+  function changeBackground() {
+    header.style.backgroundImage = "url('" + images[index] + "')";
+    index = (index + 1) % images.length;
+  }
+
+  // Initial image
+  changeBackground();
+
+  // Change every 15 minutes (900,000 ms)
+  setInterval(changeBackground, 900000);
+});
+  </script>
 </body>
 </html>
