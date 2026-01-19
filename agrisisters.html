@@ -65,17 +65,49 @@ nav{
   color:#2e7d32;
 }
 
-/* ========== HEADER ========== */
-header{
-  background:#2e7d32;
-  color:#fff;
-  padding:60px 20px;
-  text-align:center;
+/* HERO HEADER */
+#hero-header {
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out;
 }
 
-header h1{
-  font-size:2.3rem;
-  margin-bottom:10px;
+/* Dark overlay for text readability */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: #ffffff;
+  padding: 20px;
+}
+
+.hero-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #f7931e;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #e67e00;
 }
 
 /* ========== CONTENT ========== */
@@ -206,11 +238,19 @@ footer{
 </nav>
 
 <!-- HEADER -->
-<header>
-<h1>Agrisisters Initiative</h1>
-<p>Empowering women through climate-smart agriculture</p>
-</header>
+<header id="hero-header">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <img src="images/yava-logo.png" alt="Yava Farms Logo" class="hero-logo">
 
+      <h1>Yava Farms & Agricultural Consultancy</h1>
+      <p>Empowering youth and women through sustainable agriculture</p>
+
+      <a href="about.html" class="btn-primary">Learn More About Us</a>
+    </div>
+  </div>
+</header>
+  
 <!-- OVERVIEW -->
 <section>
 <h2>Overview</h2>
@@ -342,6 +382,25 @@ We welcome partnerships with donors, CSR programs, and development agencies.
 <footer>
 <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
 </footer>
+<script>
+  const header = document.getElementById("hero-header");
 
+  const images = [
+    "images/header1.jpg",
+    "images/header2.jpg",
+    "images/header3.jpg"
+  ];
+
+  let currentImage = 0;
+
+  // Set initial image
+  header.style.backgroundImage = `url(${images[currentImage]})`;
+
+  // Change image every 15 minutes (900000 ms)
+  setInterval(() => {
+    currentImage = (currentImage + 1) % images.length;
+    header.style.backgroundImage = `url(${images[currentImage]})`;
+  }, 900000);
+</script>
 </body>
 </html>
