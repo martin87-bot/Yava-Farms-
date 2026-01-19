@@ -388,27 +388,8 @@ We welcome partnerships with donors, CSR programs, and development agencies.
 <footer>
 <p>&copy; 2026 Yava Farms & Agricultural Consultancy | Agrisisters Initiative</p>
 </footer>
+
 <script>
-  const header = document.getElementById("hero-header");
-
-  const images = [
-    "images/header1as.jpg",
-    "images/header2as.jpg",
-    "images/header3as.jpg"
-  ];
-
-  let currentImage = 0;
-
-  // Set initial image
-  header.style.backgroundImage = `url(${images[currentImage]})`;
-
-  // Change image every 15 minutes (900000 ms)
-  setInterval(() => {
-    currentImage = (currentImage + 1) % images.length;
-    header.style.backgroundImage = `url(${images[currentImage]})`;
-  }, 900000);
-</script>
-  <script>
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("hero-header");
 
@@ -430,12 +411,15 @@ document.addEventListener("DOMContentLoaded", function () {
     index = (index + 1) % images.length;
   }
 
-  // Initial image
+  // Load first image immediately
   changeBackground();
 
-  // Change every 15 minutes (900,000 ms)
+  // Rotate every 15 minutes
   setInterval(changeBackground, 900000);
 });
+</script>
+
+
   </script>
 </body>
 </html>
