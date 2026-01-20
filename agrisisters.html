@@ -292,6 +292,37 @@ footer{
   border-radius: 6px;
   font-weight: bold;
 }
+  /* ===== Buttons ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:6px;
+  font-weight:bold;
+  margin:6px 6px 0 0;
+  transition:all 0.3s ease;
+}
+
+.btn-primary{
+  background:#f7931e;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#e67e00;
+}
+
+.btn-outline{
+  border:2px solid #2e7d32;
+  color:#2e7d32;
+  background:transparent;
+}
+
+.btn-outline:hover{
+  background:#2e7d32;
+  color:#fff;
+}
 </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -417,9 +448,14 @@ This challenge presents a unique opportunity to simultaneously unlock underutili
 We welcome partnerships with donors and development agencies.  
   </p>  
 </div>  
-</div>  <p><strong>Interested in supporting?</strong></p>  <a href="Yava_Farms_Pitch_Deck.pdf" class="btn">  
-Download Our Pitch Deck  
-</a>  
+</div>  <p><strong>Interested in supporting?</strong></p>  
+    <a href="Yava_Farms_Pitch_Deck.pdf" class="btn btn-primary" download>
+  <i class="fas fa-file-pdf"></i> Download Pitch Deck
+</a>
+
+<a href="mailto:yavafarms@gmail.com?subject=Partnership%20with%20Yava%20Farms" class="btn btn-outline">
+  <i class="fas fa-handshake"></i> Become a Partner
+</a>
 <a href="mailto:yavafarms@gmail.com" class="btn">  
 Become a Partner  
 </a>  
