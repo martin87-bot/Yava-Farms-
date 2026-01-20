@@ -577,6 +577,34 @@ body.page-loaded {
   .image-card img {
     height: 260px;
   }
+  /* Roots text styling */
+.roots-text {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #f1f1f1;
+}
+
+.roots-more {
+  display: none;
+}
+
+/* Read more button */
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--brand-orange);
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+}
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
@@ -770,10 +798,25 @@ body.page-loaded {
         <em>From old soil, a new generation rises.</em>
       </p>
 
-      <p>
-       In a quiet rural town where farming is seen as outdated and unprofitable, a group of tech-savvy young adults return home after school and service. Faced with joblessness and watching their communities decline, they form a cooperative called AgriNova, blending traditional farming knowledge with modern technology like drones, greenhouse automation, mobile apps for crop diagnostics, and solar-powered irrigation.
-Each episode follows their struggles and triumphs—land disputes, generational clashes, climate change, market access, and funding challenges. They build smart farms, win local innovation contests, and slowly inspire others to join. Romance, rivalry, betrayal, and resilience color their journey, making it relatable and engaging. 
-            </p>
+      <p class="roots-text">
+  In a quiet rural town where farming is seen as outdated and unprofitable, 
+  a group of tech-savvy young adults return home after school and service.
+  Faced with joblessness and community decline, they form a cooperative
+  called <strong>AgriNova</strong>, blending traditional farming knowledge
+  with modern technology.
+</p>
+
+<p class="roots-text roots-more">
+  Using drones, greenhouse automation, mobile apps for crop diagnostics,
+  and solar-powered irrigation, they confront land disputes, generational
+  clashes, climate change, and funding challenges. Romance, rivalry,
+  betrayal, and resilience shape their journey as they rebuild smart farms,
+  inspire others, and redefine what agriculture means for a new generation.
+</p>
+
+<button class="read-more-btn" onclick="toggleRootsText(this)">
+  Read more →
+</button>
 
       <p class="roots-note">
         More than a book, <strong>Roots & Revolutions</strong> is a call to action for
@@ -994,6 +1037,18 @@ this.style.display = 'none';
     });
   });
 </script> 
-      
+    <script>
+function toggleRootsText(button) {
+  const moreText = button.previousElementSibling;
+
+  if (moreText.style.display === "block") {
+    moreText.style.display = "none";
+    button.textContent = "Read more →";
+  } else {
+    moreText.style.display = "block";
+    button.textContent = "Read less ←";
+  }
+}
+    </script>  
   </body>    
 </html>    
