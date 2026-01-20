@@ -532,6 +532,58 @@ body.page-loaded {
   background: var(--brand-orange);
   transform: translateY(-4px);
 }
+    .roots-banner {
+  background: url("../images/roots-revolution-banner.jpg") center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  max-width: 900px;
+}
+
+.banner-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.banner-overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.banner-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #e65c00;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: #2e7d32;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
@@ -909,6 +961,19 @@ this.style.display = 'none';
     });
   });
 </script> 
+    <section class="roots-banner">
+  <div class="banner-overlay">
+    <h1>Roots & Revolutions</h1>
+    <p>
+      What if the future of farming belonged to the youth?
+    </p>
+
+    <div class="banner-buttons">
+      <a href="roots-revolution.html" class="btn-primary">Read the Story</a>
+      <a href="donate.html" class="btn-secondary">Support Youth in Agriculture</a>
+    </div>
+  </div>
+    </section>
   
   </body>    
 </html>    
