@@ -593,10 +593,14 @@ body.page-loaded {
   .image-card img {
     height: 260px;
   }
-
 .roots-more {
   display: none;
 }
+
+.dots {
+  display: inline;
+}
+
 
 /* Read more button */
 .read-more-btn {
@@ -668,10 +672,24 @@ body.page-loaded {
   color: #f1f1f1;
   margin-bottom: 8px;
 }
-
 .roots-more {
   display: none;
+}
+
+.dots {
+  display: inline;
 } 
+    .roots-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.roots-buttons .btn {
+  font-size: 0.85rem;
+  padding: 10px 18px;
+}
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
@@ -867,6 +885,7 @@ body.page-loaded {
   Faced with joblessness and community decline, they form a cooperative
   called <strong>AgriNova</strong>, blending traditional farming knowledge
   with modern technology.
+  <span class="dots">...</span>
 </p>
 
 <p class="roots-text roots-more">
@@ -880,9 +899,10 @@ body.page-loaded {
 <button class="read-more-btn" onclick="toggleRootsText(this)">
   Read more →
 </button>
-      <div class="roots-buttons">
-        <a href="#contact" class="btn primary-btn">Get Notified on Release</a><a href="#support" class="btn outline-btn">Support Our Work</a>
-      </div>
+     <div class="roots-buttons">
+  <a href="#contact" class="btn primary-btn">Get Notified on Release</a>
+  <a href="#support" class="btn outline-btn">Support Our Work</a>
+</div> 
 
     </div>
 
@@ -1095,16 +1115,22 @@ this.style.display = 'none';
 </script> 
     <script>
 function toggleRootsText(button) {
-  const moreText = button.previousElementSibling;
+  const contentCard = button.closest(".content-card");
+  const moreText = contentCard.querySelector(".roots-more");
+  const dots = contentCard.querySelector(".dots");
 
-  if (moreText.style.display === "block") {
+  const expanded = moreText.style.display === "block";
+
+  if (expanded) {
     moreText.style.display = "none";
+    dots.style.display = "inline";
     button.textContent = "Read more →";
   } else {
     moreText.style.display = "block";
+    dots.style.display = "none";
     button.textContent = "Read less ←";
   }
 }
-    </script>  
+</script>
   </body>    
 </html>    
