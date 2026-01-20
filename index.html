@@ -638,7 +638,42 @@ body.page-loaded {
   max-height: 160px;
   overflow: hidden;
 }
+  /* === FORCE SMALLER TEXT IN CONTENT CARDS === */
+.card h3 {
+  font-size: 1rem;          /* was too large */
+  margin-bottom: 8px;
+}
 
+.card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.card p,
+.card li {
+  font-size: 0.85rem;       /* MAIN FIX */
+  line-height: 1.45;
+}
+
+.card ul {
+  padding-left: 18px;
+}
+/* Roots & Revolutions teaser */
+.roots-text {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+  .card .btn,
+.card .btn-primary {
+  font-size: 0.8rem;
+  padding: 8px 18px;
+}
+  @media (max-width: 768px) {
+  .card p,
+  .card li {
+    font-size: 0.8rem;
+}
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
