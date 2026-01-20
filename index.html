@@ -367,6 +367,75 @@ footer {
   font-weight:bold;
   text-decoration:none;
 }
+   /* Key Achievements Section */
+.achievements-section {
+  padding: 60px 20px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #1f2937;
+}
+
+/* Cards container */
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap; /* keeps them on one line */
+}
+
+/* Individual cards */
+.achievement-card {
+  width: 220px;
+  height: 220px;
+  background: white;
+  border-radius: 50%; /* round cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+}
+
+.achievement-card h3 {
+  font-size: 36px;
+  color: #f97316; /* orange */
+  margin: 0;
+}
+
+.achievement-card p {
+  font-size: 14px; /* reduced text size */
+  margin-top: 8px;
+  color: #374151;
+  max-width: 150px;
+}
+   @media (max-width: 768px) {
+  .achievements-container {
+    flex-wrap: wrap;
+  }
+
+  .achievement-card {
+    width: 180px;
+    height: 180px;
+  }
+
+  .achievement-card h3 {
+    font-size: 30px;
+  }
+
+  .achievement-card p {
+    font-size: 13px;
+  }
+   
 .whatsapp{ background:#25D366; }
 .call{ background:var(--green); }
 </style>
@@ -500,6 +569,28 @@ footer {
 
   </div>  
 </section>  
+   <section id="key-achievements" class="achievements-section">
+  <h2 class="section-title">Our Key Achievements</h2>
+
+  <div class="achievements-container">
+
+    <div class="achievement-card">
+      <h3>120+</h3>
+      <p>Smallholder Farmers Trained</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>60+</h3>
+      <p>Women Agribusinesses Supported</p>
+    </div>
+
+    <div class="achievement-card">
+      <h3>50+</h3>
+      <p>Direct & Indirect Jobs Created</p>
+    </div>
+
+  </div>
+   </section>
 
 <!-- ROOTS -->
 <section>
