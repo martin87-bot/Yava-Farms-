@@ -532,104 +532,51 @@ body.page-loaded {
   background: var(--brand-orange);
   transform: translateY(-4px);
 }
+/* Roots layout */
+.roots-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
 
-/* Roots & Revolutions Section */
-.roots-section {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.75)
-  ),
-  url("images/roots-revolutions-banner.jpg") center/cover no-repeat;
-  padding: 90px 20px;
+/* Card base */
+.roots-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Image card */
+.image-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Content card */
+.content-card {
   color: #ffffff;
 }
 
-.roots-content {
-  max-width: 900px;
-  margin: auto;
-}
-
-.roots-tag {
-  display: inline-block;
-  background: #ff8f00;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-}
-
-.roots-section h2 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-}
-
-.roots-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  opacity: 0.9;
-}
-
-.roots-section p {
-  line-height: 1.7;
-  margin-bottom: 18px;
-}
-
-.roots-points {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.roots-points li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-.roots-note {
-  font-style: italic;
-  opacity: 0.95;
-}
-
-/* Buttons */
-.roots-buttons {
-  margin-top: 25px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  margin-right: 12px;
-}
-
-.primary-btn {
-  background: #ff8f00;
-  color: #fff;
-}
-
-.primary-btn:hover {
-  background: #e67e00;
-}
-
-.outline-btn {
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-.outline-btn:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* Mobile */
+/* Mobile stacking */
 @media (max-width: 768px) {
-  .roots-section h2 {
-    font-size: 2rem;
+  .roots-wrapper {
+    grid-template-columns: 1fr;
   }
-}
+
+  .image-card img {
+    height: 260px;
+  }
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
@@ -803,48 +750,56 @@ body.page-loaded {
 
   sectionObserver.observe(achievementsSection);
     </script>
+<!-- Roots & Revolutions Section -->
+<section class="roots-section">
+  <div class="roots-wrapper">
 
-</section>    
-<!-- Roots & Revolutions Teaser -->
-<section class="roots-section reveal">
-  <div class="roots-content">
+    <!-- LEFT CARD: IMAGE -->
+    <div class="roots-card image-card">
+      <img src="images/roots-revolutions-banner.jpg" alt="Roots & Revolutions">
+    </div>
 
-    <span class="roots-tag">📖 Coming Soon</span>
+    <!-- RIGHT CARD: CONTENT -->
+    <div class="roots-card content-card">
 
-    <h2>Roots & Revolutions</h2>
+      <span class="roots-tag">📖 Coming Soon</span>
 
-    <p class="roots-subtitle">
-      <em>From old soil, a new generation rises.</em>
-    </p>
+      <h2>Roots & Revolutions</h2>
 
-    <p>
-      Born in a farming community where the land fed families but limited dreams,
-      <strong>Roots & Revolutions</strong> tells the powerful story of young people
-      who dare to reimagine agriculture. Through cooperation, technology, and shared
-      purpose, they discover that farming is not just survival. It is innovation,
-      leadership, and opportunity.
-    </p>
+      <p class="roots-subtitle">
+        <em>From old soil, a new generation rises.</em>
+      </p>
 
-    <ul class="roots-points">
-      <li>✔ Youth transforming tradition into innovation</li>
-      <li>✔ Cooperatives building shared prosperity</li>
-      <li>✔ Technology reshaping rural livelihoods</li>
-      <li>✔ Communities growing hope alongside crops</li>
-    </ul>
+      <p>
+        Born in a farming community where the land fed families but limited dreams,
+        <strong>Roots & Revolutions</strong> tells the powerful story of young people
+        who dare to reimagine agriculture. Through cooperation, technology, and shared
+        purpose, they discover that farming is not just survival. It is innovation,
+        leadership, and opportunity.
+      </p>
 
-    <p class="roots-note">
-      More than a book, <strong>Roots & Revolutions</strong> is a call to action for
-      students, educators, NGOs, and development partners who believe the future of
-      agriculture belongs to the youth.
-    </p>
+      <ul class="roots-points">
+        <li>✔ Youth transforming tradition into innovation</li>
+        <li>✔ Cooperatives building shared prosperity</li>
+        <li>✔ Technology reshaping rural livelihoods</li>
+        <li>✔ Communities growing hope alongside crops</li>
+      </ul>
 
-    <div class="roots-buttons">
-      <a href="#contact" class="btn primary-btn">Get Notified on Release</a>
-      <a href="#support" class="btn outline-btn">Support Our Work</a>
+      <p class="roots-note">
+        More than a book, <strong>Roots & Revolutions</strong> is a call to action for
+        students, educators, NGOs, and development partners.
+      </p>
+
+      <div class="roots-buttons">
+        <a href="#contact" class="btn primary-btn">Get Notified on Release</a>
+        <a href="#support" class="btn outline-btn">Support Our Work</a>
+      </div>
+
     </div>
 
   </div>
 </section>
+
     <!-- Visit Us -->    <section id="visit">    
   <h2>Visit Us</h2>    
   <p>    
