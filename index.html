@@ -532,44 +532,104 @@ body.page-loaded {
   background: var(--brand-orange);
   transform: translateY(-4px);
 }
-    .roots-footer-banner {
-  background: url("images/roots-revolutions-banner.jpg") center/cover no-repeat;
-  padding: 6rem 1.5rem;
-  position: relative;
+
+/* Roots & Revolutions Section */
+.roots-section {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.75)
+  ),
+  url("images/roots-revolution-banner.jpg") center/cover no-repeat;
+  padding: 90px 20px;
+  color: #ffffff;
 }
 
-.roots-footer-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-}
-
-.roots-footer-content {
-  position: relative;
-  max-width: 1000px;
+.roots-content {
+  max-width: 900px;
   margin: auto;
-  text-align: center;
+}
+
+.roots-tag {
+  display: inline-block;
+  background: #ff8f00;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.roots-section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.roots-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.roots-section p {
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.roots-points {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.roots-points li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.roots-note {
+  font-style: italic;
+  opacity: 0.95;
+}
+
+/* Buttons */
+.roots-buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.primary-btn {
+  background: #ff8f00;
   color: #fff;
 }
 
-.roots-footer-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.primary-btn:hover {
+  background: #e67e00;
 }
 
-.roots-footer-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.outline-btn {
+  border: 2px solid #fff;
+  color: #fff;
 }
 
-.banner-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+.outline-btn:hover {
+  background: #fff;
+  color: #000;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .roots-section h2 {
+    font-size: 2rem;
+  }
+}
   </style>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  </head>    <body>    
 <!-- Page Loader -->    
 <div id="page-loader">    
@@ -745,19 +805,44 @@ body.page-loaded {
     </script>
 
 </section>    
-    <!-- Roots & Revolutions Fundraising Banner -->
-<section class="roots-footer-banner">
-  <div class="roots-footer-content">
+<!-- Roots & Revolutions Teaser -->
+<section class="roots-section reveal">
+  <div class="roots-content">
+
+    <span class="roots-tag">📖 Coming Soon</span>
+
     <h2>Roots & Revolutions</h2>
-    <p>
-      What if the future of farming belonged to the youth?
-      Support our work by reading and sharing this story.
+
+    <p class="roots-subtitle">
+      <em>From old soil, a new generation rises.</em>
     </p>
 
-    <div class="banner-buttons">
-      <a href="roots-revolutions.html" class="btn-primary">Read the Story</a>
-      <a href="donate.html" class="btn-secondary">Support Youth in Agriculture</a>
+    <p>
+      Born in a farming community where the land fed families but limited dreams,
+      <strong>Roots & Revolutions</strong> tells the powerful story of young people
+      who dare to reimagine agriculture. Through cooperation, technology, and shared
+      purpose, they discover that farming is not just survival. It is innovation,
+      leadership, and opportunity.
+    </p>
+
+    <ul class="roots-points">
+      <li>✔ Youth transforming tradition into innovation</li>
+      <li>✔ Cooperatives building shared prosperity</li>
+      <li>✔ Technology reshaping rural livelihoods</li>
+      <li>✔ Communities growing hope alongside crops</li>
+    </ul>
+
+    <p class="roots-note">
+      More than a book, <strong>Roots & Revolutions</strong> is a call to action for
+      students, educators, NGOs, and development partners who believe the future of
+      agriculture belongs to the youth.
+    </p>
+
+    <div class="roots-buttons">
+      <a href="#contact" class="btn primary-btn">Get Notified on Release</a>
+      <a href="#support" class="btn outline-btn">Support Our Work</a>
     </div>
+
   </div>
 </section>
     <!-- Visit Us -->    <section id="visit">    
