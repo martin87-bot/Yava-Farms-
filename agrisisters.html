@@ -488,7 +488,11 @@ We welcome partnerships with donors and development agencies.
     </a>
   </div>
 </footer>
-
+  <div id="lightbox">
+  <span id="closeLightbox">×</span>
+  <img id="lightboxImg">
+  <a id="downloadBtn" download>⬇ Download</a>
+  </div>
 <script>
 /* ===== HERO SLIDER SCRIPT ===== */
 const slides = document.querySelectorAll(".slide");
@@ -568,11 +572,7 @@ startSlider();
     images.forEach(img => gallery.appendChild(img));
   }
   </script>
-  <div id="lightbox">
-  <span id="closeLightbox">×</span>
-  <img id="lightboxImg">
-  <a id="downloadBtn" download>⬇ Download</a>
-  </div>
+
   <script>
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
