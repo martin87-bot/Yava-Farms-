@@ -434,6 +434,111 @@ footer {
 
   .achievement-card p {
     font-size: 13px;
+  }/* Roots & Revolution Section */
+.roots-section {
+  padding: 80px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+/* Coming soon underline */
+.coming-soon {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.coming-soon span {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f97316;
+  padding: 0 15px;
+  background: white;
+  position: relative;
+  z-index: 2;
+}
+
+.coming-soon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #f97316;
+  z-index: 1;
+}
+
+/* Book layout */
+.book-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Cards */
+.post-card {
+  width: 300px;
+  padding: 30px;
+  background: #f9fafb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.left-card {
+  border-radius: 12px 0 0 12px;
+}
+
+.right-card {
+  border-radius: 0 12px 12px 0;
+}
+
+.post-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.post-card p {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* Comb binding */
+.book-binding {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 8px;
+  background: #e5e7eb;
+}
+
+.book-binding span {
+  width: 6px;
+  height: 16px;
+  background: #9ca3af;
+  border-radius: 3px;
+}
+   @media (max-width: 768px) {
+  .book-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-binding {
+    flex-direction: row;
+    width: 100%;
+    height: 20px;
+    padding: 8px;
+  }
+
+  .book-binding span {
+    width: 16px;
+    height: 6px;
+  }
+
+  .left-card,
+  .right-card {
+    border-radius: 12px;
   }
    
 .whatsapp{ background:#25D366; }
@@ -574,10 +679,17 @@ footer {
 
 <!-- ROOTS -->
 <section>
+     <!-- Coming Soon -->
+  <div class="coming-soon">
+    <span>Coming Soon...</span>
+  </div>
   <div class="roots-wrapper">
     <div class="roots-card image-card">
       <img src="images/roots-revolutions-banner.jpg">
     </div>
+      <div class="book-binding">
+      <span></span><span></span><span></span><span></span><span></span>
+      </div>
     <div class="roots-card">
       <h2>Roots & Revolutions</h2>
       <p class="roots-text">
